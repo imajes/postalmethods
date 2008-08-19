@@ -1,8 +1,8 @@
 require 'postalmethods/version'
 
-AUTHOR = 'FIXME full name'  # can also be an array of Authors
-EMAIL = "FIXME email"
-DESCRIPTION = "description of gem"
+AUTHOR = 'James Cox'  # can also be an array of Authors
+EMAIL = "james-at-imaj.es"
+DESCRIPTION = "Wrapper for the Postal Methods API"
 GEM_NAME = 'postalmethods' # what ppl will type to install your gem
 RUBYFORGE_PROJECT = 'postalmethods' # The unix name for your project
 HOMEPATH = "http://#{RUBYFORGE_PROJECT}.rubyforge.org"
@@ -13,7 +13,7 @@ EXTRA_DEPENDENCIES = [
 
 @config_file = "~/.rubyforge/user-config.yml"
 @config = nil
-RUBYFORGE_USERNAME = "unknown"
+RUBYFORGE_USERNAME = "imajes"
 def rubyforge_username
   unless @config
     begin
