@@ -1,11 +1,14 @@
 require File.dirname(__FILE__) + '/spec_helper.rb'
 
-# Time to add your specs!
-# http://rspec.info/
-describe "Place your specs here" do
+describe "Postal Methods Basic Client" do
   
-  it "find this spec in spec directory" do
-    violated "Be sure to write your specs"
+  it "should instantiate a client with a username and password" do
+    c = PostalMethods::Client.new(:user => 'user', :password => 'password')
+    c.class.should == PostalMethods::Client
   end
+  
+  it "should fail without a user/pass on instantiation"
+  
+  it ""
   
 end
