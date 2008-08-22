@@ -6,6 +6,7 @@ module PostalMethods
   
       require 'postalmethods/send_letter.rb'
   
+      include SendLetter
   
       API_URI = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
   
@@ -23,11 +24,6 @@ module PostalMethods
     
       end
       
-      # helper accessors for the activities
-      def send_letter
-    
-
-
       ## document helpers
       def document=(doc)
         self.to_send = open(doc)

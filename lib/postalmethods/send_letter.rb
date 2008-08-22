@@ -1,8 +1,9 @@
 module PostalMethods
   
-  class SendLetter
+  module SendLetter
     
-    def initialize()
+    def send_letter(document, description="")
+      puts self.password
     
     end
     
