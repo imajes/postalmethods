@@ -8,3 +8,5 @@ end
 
 $:.unshift(File.dirname(__FILE__) + '/../lib')
 require 'postalmethods'
+
+PM_OPTS = {:username => 'imajes', :password => 'rubyROOLS'}

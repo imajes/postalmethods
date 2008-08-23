@@ -12,16 +12,15 @@ module PostalMethods
   
       require 'postalmethods/send_letter.rb'
       require 'postalmethods/exceptions.rb'
-      
+      require 'postalmethods/document_processor.rb'
+
       # include modules
       include SendLetter
+      include DocumentProcessor
   
       API_URI = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
   
-      attr_accessor :username
-      attr_accessor :password
-      attr_accessor :to_send
-      attr_accessor :rpc_driver
+      attr_accessor :username, :password, :to_send, :rpc_driver, :prepared
   
       def initialize(opts = {})
         if opts[:username].nil? || opts[:password].nil?
@@ -34,19 +33,8 @@ module PostalMethods
 
       def prepare!
         self.rpc_driver = SOAP::WSDLDriverFactory.new(API_URI).create_rpc_driver
+        self.prepared = true
       end
       
-      ## document helpers
-      def document=(doc)
-        self.to_send = open(doc)
-      end
-  
-      def document?
-        true unless self.to_send.nil?
-      end
-  
-      def document
-        self.to_send
-      end
   end
 end
