@@ -3,8 +3,9 @@ module PostalMethods
   module SendLetter
     
     def send_letter(document, description="")
-      puts self.password
-    
+      ## push a letter over the api
+      
+      
     end
     
   end
