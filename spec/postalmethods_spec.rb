@@ -8,7 +8,7 @@ describe "Basic Client" do
   end
   
   it "should fail without a user/pass on instantiation" do
-    lambda {PostalMethods::Client.new()}.should raise_error(PostalMethods::NoCredentialsError)
+    lambda {PostalMethods::Client.new()}.should raise_error(PostalMethods::NoCredentialsException)
   end
   
   it "should create a driver client thru the factory" do
@@ -34,6 +34,6 @@ describe "Send Letter" do
   end
   
   it "should refuse to send letter before prepare" do
-    lambda {@client.send_letter(@doc, "the long goodbye")}.should raise_error(PostalMethods::NoPreparationError)
+    lambda {@client.send_letter(@doc, "the long goodbye")}.should raise_error(PostalMethods::NoPreparationException)
   end  
 end

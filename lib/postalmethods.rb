@@ -24,7 +24,7 @@ module PostalMethods
   
       def initialize(opts = {})
         if opts[:username].nil? || opts[:password].nil?
-          raise PostalMethods::NoCredentialsError
+          raise PostalMethods::NoCredentialsException
         end
         
         self.username = opts[:username]
