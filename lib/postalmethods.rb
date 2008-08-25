@@ -18,7 +18,7 @@ module PostalMethods
       include SendLetter
       include DocumentProcessor
   
-      API_URI = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
+      API_URI = "https://api.postalmethods.com/PostalWS.asmx?WSDL"
   
       attr_accessor :username, :password, :to_send, :rpc_driver, :prepared
   
