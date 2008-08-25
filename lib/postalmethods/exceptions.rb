@@ -56,7 +56,6 @@ module PostalMethods
     -4011 => "The MaxID field is empty or missing",
   }
   
-  
   #--
   # Classify Status Codes
   #++
@@ -64,7 +63,7 @@ module PostalMethods
   API_STATUS_CODES.to_a.each do |http_status|
     status, body = http_status
     class_eval <<-"end;"
-      class APIStatusCode#{status.to_s.gsub(/( |\-)/,'')} < PostalMethods::APIException
+      class APIStatusCode#{status.to_s.gsub(/( |\-)/,'')}Exception < PostalMethods::APIException
         def initialize(body=nil)
           body = '#{body}' if body.nil?
           super(#{status}, body)
