@@ -10,15 +10,18 @@ module PostalMethods
       require 'soap/rpc/driver'
       require 'soap/wsdlDriver'
   
-      require 'postalmethods/send_letter.rb'
       require 'postalmethods/exceptions.rb'
       require 'postalmethods/document_processor.rb'
+      require 'postalmethods/send_letter.rb'
+      require 'postalmethods/get_letter_status.rb'
+
 
       # include modules
       include SendLetter
       include DocumentProcessor
+      include GetLetterStatus
   
-      API_URI = "https://api.postalmethods.com/PostalWS.asmx?WSDL"
+      API_URI = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
   
       attr_accessor :username, :password, :to_send, :rpc_driver, :prepared
   
@@ -32,8 +35,9 @@ module PostalMethods
       end
 
       def prepare!
-        self.rpc_driver = SOAP::WSDLDriverFactory.new(API_URI).create_rpc_driver
+        self.rpc_driver ||= SOAP::WSDLDriverFactory.new(API_URI).create_rpc_driver
         self.prepared = true
+        return self
       end
       
   end
