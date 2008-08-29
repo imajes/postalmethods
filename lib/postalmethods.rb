@@ -14,12 +14,14 @@ module PostalMethods
       require 'postalmethods/document_processor.rb'
       require 'postalmethods/send_letter.rb'
       require 'postalmethods/get_letter_status.rb'
+      require 'postalmethods/utility.rb'
 
 
       # include modules
       include SendLetter
       include DocumentProcessor
       include GetLetterStatus
+      include UtilityMethods
   
       API_URI = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
   

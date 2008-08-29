@@ -1,5 +1,11 @@
 module PostalMethods
 
+  class GenericCodeError < Exception
+    def initialize
+      super("You have reached a code error in the ruby gem. Please report to the forums")
+    end
+  end
+
   class NoCredentialsException < Exception
     def initialize
       super("You have failed to provide any credentials")
@@ -9,6 +15,12 @@ module PostalMethods
   class NoPreparationException < Exception
     def initialize
       super("You must prepare the client first with @client.prepare!")
+    end
+  end
+  
+  class InvalidLetterIDsRange < Exception
+    def initialize
+      super("You need to supply an array or a list of ids, comma seperated.")
     end
   end
   
