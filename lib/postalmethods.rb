@@ -22,22 +22,27 @@ module PostalMethods
       include DocumentProcessor
       include GetLetterStatus
       include UtilityMethods
-  
-      API_URI = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
-  
-      attr_accessor :username, :password, :to_send, :rpc_driver, :prepared
+    
+      attr_accessor :api_uri, :username, :password, :to_send, :rpc_driver, :prepared
   
       def initialize(opts = {})
         if opts[:username].nil? || opts[:password].nil?
           raise PostalMethods::NoCredentialsException
         end
         
+        ## declare here so we can override in tests, etc.
+        self.api_uri = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
+                
         self.username = opts[:username]
         self.password = opts[:password]
       end
 
       def prepare!
-        self.rpc_driver ||= SOAP::WSDLDriverFactory.new(API_URI).create_rpc_driver
+        begin
+          self.rpc_driver ||= SOAP::WSDLDriverFactory.new(self.api_uri).create_rpc_driver
+        rescue SocketError
+          raise PostalMethods::NoConnectionError
+        end
         self.prepared = true
         return self
       end

@@ -24,6 +24,12 @@ module PostalMethods
     end
   end
   
+  class NoConnectionError < Exception
+    def initialize
+      super("Error connecting to the API server. If you are sure you are online, Please call support.")
+    end
+  end
+  
   ## base api exception - stolen from Halcyon
   ## http://github.com/mtodd/halcyon/tree/master/LICENSE
   
