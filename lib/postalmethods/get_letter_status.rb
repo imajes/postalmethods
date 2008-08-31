@@ -20,7 +20,7 @@ module PostalMethods
       if ws_status == -3000
         return [delivery_status, last_status, ws_status]
       elsif API_STATUS_CODES.has_key?(ws_status)
-        instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
+        instance_eval("raise APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception")
       end
 
     end
