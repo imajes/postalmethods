@@ -26,7 +26,7 @@ module PostalMethods
     end
 
     def get_letter_status_multiple(ids)
-      raise PostalMethods::NoPreparationException unless self.prepared 
+      raise PostalMethods::NoPreparationException unless self.prepared
 
       if ids.class == Array
         ids = ids.join(",")
@@ -43,12 +43,11 @@ module PostalMethods
       puts rv
       puts rv.inspect
       
-            ws_status = rv.getLetterStatus_MultipleResult.resultCode.to_i
-      delivery_status = rv.getLetterStatus_MultipleResult.status.to_i
-          last_status = rv.getLetterStatus_MultipleResult.lastUpdateTime
+      ws_status = rv.getLetterStatus_MultipleResult.resultCode.to_i
+        results = rv.getLetterStatus_MultipleResult.letterStatuses
       
       if ws_status == -3000
-        return [delivery_status, last_status, ws_status]
+        return [results, ws_status]
       elsif API_STATUS_CODES.has_key?(ws_status)
         instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
       end
