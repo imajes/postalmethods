@@ -26,3 +26,5 @@ class Hash
     self.merge overrides
   end
 end
+
+require "ruby-debug"
