@@ -31,11 +31,16 @@ describe "Utility Methods" do
   
   it "should get the details of a letter" do
     id = @client.send_letter(@doc, "the long goodbye").sendLetterResult.to_i
-    details = @client.get_letter_details(id).first
-    details.should be_an_instance_of(SOAP::Mapping::Object)
+    details = @client.get_letter_details(id)
     
-    details.price.should == "0.00"
-    details.iD.to_i.should == id ## be careful not to confuse with class id
+    # check the return...
+    details.should be_an_instance_of(Array)
+    
+    # and now the item...
+    details.first.should be_an_instance_of(SOAP::Mapping::Object)
+    
+    details.first.price.should == "0.00"
+    details.first.iD.to_i.should == id ## be careful not to confuse with class id
   end
   
   it "should raise an error when trying to get details of an invalid letter" do

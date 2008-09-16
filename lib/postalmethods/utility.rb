@@ -25,7 +25,11 @@ module PostalMethods
       raise PostalMethods::NoPreparationException unless self.prepared 
       
       ## get a letter as pdf over the wire
-      rv = @rpc_driver.getPDF(:Username => self.username, :Password => self.password, :ID => id) 
+      begin
+        rv = @rpc_driver.getPDF(:Username => self.username, :Password => self.password, :ID => id)
+      rescue SOAP::FaultError
+        raise APIStatusCode3150Exception
+      end
             
       status_code = rv.getPDFResult.resultCode.to_i
 

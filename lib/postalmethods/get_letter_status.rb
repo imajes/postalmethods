@@ -9,16 +9,13 @@ module PostalMethods
       opts = {:Username => self.username, :Password => self.password, :ID => id}
       
       rv = @rpc_driver.getLetterStatus(opts)
-
-      puts rv
-      puts rv.inspect
       
             ws_status = rv.getLetterStatusResult.resultCode.to_i
       delivery_status = rv.getLetterStatusResult.status.to_i
-          last_status = rv.getLetterStatusResult.lastUpdateTime
+          last_update = rv.getLetterStatusResult.lastUpdateTime
       
       if ws_status == -3000
-        return [delivery_status, last_status, ws_status]
+        return [delivery_status, last_update, ws_status]
       elsif API_STATUS_CODES.has_key?(ws_status)
         instance_eval("raise APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception")
       end
@@ -39,12 +36,9 @@ module PostalMethods
       opts = {:Username => self.username, :Password => self.password, :ID => ids}
       
       rv = @rpc_driver.getLetterStatus_Multiple(opts)
-
-      puts rv
-      puts rv.inspect
       
       ws_status = rv.getLetterStatus_MultipleResult.resultCode.to_i
-        results = rv.getLetterStatus_MultipleResult.letterStatuses
+        results = rv.getLetterStatus_MultipleResult.letterStatuses.letterStatus # yes, this reads weird to me too
       
       if ws_status == -3000
         return [results, ws_status]
