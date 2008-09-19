@@ -22,4 +22,5 @@ describe "Client" do
     c.stubs(:api_uri).returns("http://invaliduri.tld/api_endpoint.wtf?")
     lambda {c.prepare!}.should raise_error(PostalMethods::NoConnectionError)
   end
+    
 end

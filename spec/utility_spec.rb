@@ -24,13 +24,13 @@ describe "Utility Methods" do
     id = res.sendLetterResult.to_i
     
     id.should > 0
-    
-    # this should switch to a -3005 error once implemented at the api...
-    lambda {@client.get_pdf(id)}.should raise_error(PostalMethods::APIStatusCode3150Exception)
+     #    
+    lambda {@client.get_pdf(id)}.should raise_error(PostalMethods::APIStatusCode3020Exception)
   end
   
   it "should get the details of a letter" do
     id = @client.send_letter(@doc, "the long goodbye").sendLetterResult.to_i
+    sleep(10) # because it's a tired little clients
     details = @client.get_letter_details(id)
     
     # check the return...
@@ -45,18 +45,17 @@ describe "Utility Methods" do
   
   it "should raise an error when trying to get details of an invalid letter" do
     sleep(6) # got to wait 6 seconds...
-    lambda { rv = @client.get_letter_details(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
+    lambda { @client.get_letter_details(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
   end
   
   it "should cancel delivery of a letter" do
     id = @client.send_letter(@doc, "the long goodbye").sendLetterResult.to_i
-
     rv = @client.cancel_delivery(id)
     rv.should be_true  
   end
   
-  it "should raise an error when trying to get details of an invalid letter" do
-    lambda { rv = @client.cancel_delivery(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
+  it "should raise an error when trying to cancel an invalid letter" do
+    lambda { @client.cancel_delivery(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
   end
   
   

@@ -15,7 +15,7 @@ module PostalMethods
           last_update = rv.getLetterStatusResult.lastUpdateTime
       
       if ws_status == -3000
-        return [delivery_status, last_update, ws_status]
+        return [delivery_status, last_update]
       elsif API_STATUS_CODES.has_key?(ws_status)
         instance_eval("raise APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception")
       end
@@ -41,7 +41,7 @@ module PostalMethods
         results = rv.getLetterStatus_MultipleResult.letterStatuses.letterStatus # yes, this reads weird to me too
       
       if ws_status == -3000
-        return [results, ws_status]
+        return results
       elsif API_STATUS_CODES.has_key?(ws_status)
         instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
       end
@@ -52,19 +52,15 @@ module PostalMethods
       raise PostalMethods::NoPreparationException unless self.prepared 
 
       ## get status
-      opts = {:Username => self.username, :Password => self.password, :ID => id}
+      opts = {:Username => self.username, :Password => self.password, :MinID => minid.to_i, :MaxID => maxid.to_i}
       
       rv = @rpc_driver.getLetterStatus_Range(opts)
 
-      puts rv
-      puts rv.inspect
-      
-            ws_status = rv.getLetterStatus_RangeResult.resultCode.to_i
-      delivery_status = rv.getLetterStatus_RangeResult.status.to_i
-          last_status = rv.getLetterStatus_RangeResult.lastUpdateTime
+      ws_status = rv.getLetterStatus_RangeResult.resultCode.to_i
+        results = rv.getLetterStatus_RangeResult.letterStatuses.letterStatus
       
       if ws_status == -3000
-        return [delivery_status, last_status, ws_status]
+        return results
       elsif API_STATUS_CODES.has_key?(ws_status)
         instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
       end
