@@ -43,16 +43,8 @@ describe "Get Letter Status" do
   end
 
   it "should attempt to request a multiple array of invalid letters" do
-      ret = @client.get_letter_status_multiple(1,2,3)
-      ret.should be_an_instance_of(Array)
-
-      # the return is an array [results, status]
-      recv_letters = ret.collect { |r| r.iD }
-
-      recv_letters.should == letters
-    end
-    
-
+    lambda { @client.get_letter_status_multiple([1,2,3]) }.should raise_error(PostalMethods::APIStatusCode3115Exception)
+  end
 
   it "should request a range of letters and get their status" do
     letters = []
@@ -73,6 +65,10 @@ describe "Get Letter Status" do
     recv_letters = ret.collect { |r| r.iD }
 
     recv_letters.should == letters
+  end
+
+  it "should attempt to request a range of invalid letters" do
+    lambda { @client.get_letter_status_range(1,3) }.should raise_error(PostalMethods::APIStatusCode3115Exception)
   end
 
 end

@@ -156,7 +156,7 @@
       C0 code coverage information
     </h3>
     <p>
-      Generated on Fri Sep 19 20:07:10 +0100 2008 with 
+      Generated on Sat Sep 20 19:45:21 +0100 2008 with 
       <a href='http://eigenclass.org/hiki/rcov'>
         rcov 0.8.1.2
       </a>
@@ -175,16 +175,16 @@
     </td> </tr> </thead> <tbody> <tr class='light'> <td> <a
     href='lib-postalmethods-get_letter_status_rb.html'>
     lib/postalmethods/get_letter_status.rb </a> </td> <td class='lines_total'>
-    <tt> 71 </tt> </td> <td class='lines_code'> <tt> 45 </tt> </td> <td> <table
+    <tt> 69 </tt> </td> <td class='lines_code'> <tt> 43 </tt> </td> <td> <table
     cellspacing='0' align='right' cellpadding='0'> <tr> <td> <tt
-    class='coverage_total'> 81.7% </tt> &nbsp; </td> <td> <table
+    class='coverage_total'> 100.0% </tt> &nbsp; </td> <td> <table
     class='percent_graph' cellspacing='0' width='100' cellpadding='0'> <tr> <td
-    class='covered' width='82' /> <td class='uncovered' width='18' /> </tr>
+    class='covered' width='100' /> <td class='uncovered' width='0' /> </tr>
     </table> </td> </tr> </table> </td> <td> <table cellspacing='0'
-    align='right' cellpadding='0'> <tr> <td> <tt class='coverage_code'> 77.8%
+    align='right' cellpadding='0'> <tr> <td> <tt class='coverage_code'> 100.0%
     </tt> &nbsp; </td> <td> <table class='percent_graph' cellspacing='0'
-    width='100' cellpadding='0'> <tr> <td class='covered' width='78' /> <td
-    class='uncovered' width='22' /> </tr> </table> </td> </tr> </table> </td>
+    width='100' cellpadding='0'> <tr> <td class='covered' width='100' /> <td
+    class='uncovered' width='0' /> </tr> </table> </td> </tr> </table> </td>
     </tr> </tbody> </table><pre><span class="marked0"><a name="line1"></a> 1
     module PostalMethods </span><span class="inferred1"><a name="line2"></a> 2
     </span><span class="marked0"><a name="line3"></a> 3 module GetLetterStatus
@@ -234,45 +234,42 @@
     class="inferred0"><a name="line39"></a>39 </span><span class="marked1"><a
     name="line40"></a>40 ws_status =
     rv.getLetterStatus_MultipleResult.resultCode.to_i </span><span
-    class="marked0"><a name="line41"></a>41 results =
-    rv.getLetterStatus_MultipleResult.letterStatuses.letterStatus # yes, this
-    reads weird to me too </span><span class="inferred1"><a name="line42"></a>42
-    </span><span class="marked0"><a name="line43"></a>43 if ws_status == -3000
-    </span><span class="marked1"><a name="line44"></a>44 return results
-    </span><span class="uncovered0"><a name="line45"></a>45 elsif
-    API_STATUS_CODES.has_key?(ws_status) </span><span class="uncovered1"><a
-    name="line46"></a>46 instance_eval(&quot;raise
-    APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception&quot;)
-    </span><span class="uncovered0"><a name="line47"></a>47 end </span><span
-    class="uncovered1"><a name="line48"></a>48 </span><span
-    class="uncovered0"><a name="line49"></a>49 end </span><span
-    class="inferred1"><a name="line50"></a>50 </span><span class="marked0"><a
-    name="line51"></a>51 def get_letter_status_range(minid, maxid) </span><span
-    class="marked1"><a name="line52"></a>52 raise
-    PostalMethods::NoPreparationException unless self.prepared </span><span
-    class="inferred0"><a name="line53"></a>53 </span><span class="inferred1"><a
-    name="line54"></a>54 ## get status </span><span class="marked0"><a
-    name="line55"></a>55 opts = {:Username =&gt; self.username, :Password =&gt;
-    self.password, :MinID =&gt; minid.to_i, :MaxID =&gt; maxid.to_i}
-    </span><span class="inferred1"><a name="line56"></a>56 </span><span
-    class="marked0"><a name="line57"></a>57 rv =
-    @rpc_driver.getLetterStatus_Range(opts) </span><span class="inferred1"><a
-    name="line58"></a>58 </span><span class="marked0"><a name="line59"></a>59
+    class="inferred0"><a name="line41"></a>41 </span><span class="marked1"><a
+    name="line42"></a>42 if ws_status == -3000 </span><span class="marked0"><a
+    name="line43"></a>43 return
+    rv.getLetterStatus_MultipleResult.letterStatuses.letterStatus </span><span
+    class="marked1"><a name="line44"></a>44 elsif
+    API_STATUS_CODES.has_key?(ws_status) </span><span class="marked0"><a
+    name="line45"></a>45 instance_eval(&quot;raise
+    APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception&quot;)
+    </span><span class="inferred1"><a name="line46"></a>46 end </span><span
+    class="inferred0"><a name="line47"></a>47 </span><span class="inferred1"><a
+    name="line48"></a>48 end </span><span class="inferred0"><a
+    name="line49"></a>49 </span><span class="marked1"><a name="line50"></a>50
+    def get_letter_status_range(minid, maxid) </span><span class="marked0"><a
+    name="line51"></a>51 raise PostalMethods::NoPreparationException unless
+    self.prepared </span><span class="inferred1"><a name="line52"></a>52
+    </span><span class="inferred0"><a name="line53"></a>53 ## get status
+    </span><span class="marked1"><a name="line54"></a>54 opts = {:Username =&gt;
+    self.username, :Password =&gt; self.password, :MinID =&gt; minid.to_i,
+    :MaxID =&gt; maxid.to_i} </span><span class="inferred0"><a
+    name="line55"></a>55 </span><span class="marked1"><a name="line56"></a>56 rv
+    = @rpc_driver.getLetterStatus_Range(opts) </span><span class="inferred0"><a
+    name="line57"></a>57 </span><span class="marked1"><a name="line58"></a>58
     ws_status = rv.getLetterStatus_RangeResult.resultCode.to_i </span><span
-    class="marked1"><a name="line60"></a>60 results =
+    class="inferred0"><a name="line59"></a>59 </span><span class="marked1"><a
+    name="line60"></a>60 if ws_status == -3000 </span><span class="marked0"><a
+    name="line61"></a>61 return
     rv.getLetterStatus_RangeResult.letterStatuses.letterStatus </span><span
-    class="inferred0"><a name="line61"></a>61 </span><span class="marked1"><a
-    name="line62"></a>62 if ws_status == -3000 </span><span class="marked0"><a
-    name="line63"></a>63 return results </span><span class="uncovered1"><a
-    name="line64"></a>64 elsif API_STATUS_CODES.has_key?(ws_status) </span><span
-    class="uncovered0"><a name="line65"></a>65 instance_eval(&quot;raise
-    APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception&quot;)
-    </span><span class="uncovered1"><a name="line66"></a>66 end </span><span
-    class="uncovered0"><a name="line67"></a>67 </span><span
-    class="uncovered1"><a name="line68"></a>68 end </span><span
-    class="uncovered0"><a name="line69"></a>69 </span><span
-    class="uncovered1"><a name="line70"></a>70 end </span><span
-    class="uncovered0"><a name="line71"></a>71 end </span></pre>
+    class="marked1"><a name="line62"></a>62 elsif
+    API_STATUS_CODES.has_key?(ws_status) </span><span class="marked0"><a
+    name="line63"></a>63 instance_eval(&quot;raise
+    APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception&quot;)
+    </span><span class="inferred1"><a name="line64"></a>64 end </span><span
+    class="inferred0"><a name="line65"></a>65 </span><span class="inferred1"><a
+    name="line66"></a>66 end </span><span class="inferred0"><a
+    name="line67"></a>67 </span><span class="inferred1"><a name="line68"></a>68
+    end </span><span class="inferred0"><a name="line69"></a>69 end </span></pre>
     <hr />
     <p> Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'> rcov
     code coverage analysis tool for Ruby </a> version 0.8.1.2. </p>

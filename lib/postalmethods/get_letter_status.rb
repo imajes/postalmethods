@@ -38,12 +38,11 @@ module PostalMethods
       rv = @rpc_driver.getLetterStatus_Multiple(opts)
       
       ws_status = rv.getLetterStatus_MultipleResult.resultCode.to_i
-        results = rv.getLetterStatus_MultipleResult.letterStatuses.letterStatus # yes, this reads weird to me too
       
       if ws_status == -3000
-        return results
+        return rv.getLetterStatus_MultipleResult.letterStatuses.letterStatus
       elsif API_STATUS_CODES.has_key?(ws_status)
-        instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
+        instance_eval("raise APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception")
       end
 
     end
@@ -57,12 +56,11 @@ module PostalMethods
       rv = @rpc_driver.getLetterStatus_Range(opts)
 
       ws_status = rv.getLetterStatus_RangeResult.resultCode.to_i
-        results = rv.getLetterStatus_RangeResult.letterStatuses.letterStatus
       
       if ws_status == -3000
-        return results
+        return rv.getLetterStatus_RangeResult.letterStatuses.letterStatus
       elsif API_STATUS_CODES.has_key?(ws_status)
-        instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
+        instance_eval("raise APIStatusCode#{ws_status.to_s.gsub(/( |\-)/,'')}Exception")
       end
 
     end
