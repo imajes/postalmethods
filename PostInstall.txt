@@ -1,7 +1,6 @@
 
-For more information on postalmethods, see http://postalmethods.rubyforge.org
+For more information on working with Postal Methods, 
+see the API reference here:
 
-NOTE: Change this information in PostInstall.txt 
-You can also delete it if you don't want it.
-
+http://www.postalmethods.com/resources/quickstart
 

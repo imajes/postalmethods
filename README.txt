@@ -1,47 +1,35 @@
 = postalmethods
 
-* FIX (url)
+* Info: http://www.postalmethods.com/resources/quickstart
+* Code: http://github.com/imajes/postalmethods/tree/master
 
 == DESCRIPTION:
 
-FIX (describe your package)
+API wrapper library for the postal methods api.
 
 == FEATURES/PROBLEMS:
 
-* FIX (list of features or problems)
+* Provides access to all of the API methods with appropriate 
+  exceptions as necessary.
 
 == SYNOPSIS:
 
-  FIX (code sample of usage)
+require 'postalmethods'
+
+@doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+@client = PostalMethods::Client.new(:user => "user", :password => "password")
+rv = @client.send_letter(@doc, "description of doc")
+puts rv
 
 == REQUIREMENTS:
 
-* FIX (list of requirements)
+* This gem relies on the soap4r gem.
 
 == INSTALL:
 
-* FIX (sudo gem install, anything else)
+* sudo gem install postalmethods
+* get a developer account at postalmethods.com
 
 == LICENSE:
 
-Copyright (c) 2008 Postal Methods, Inc
-Created 2008 by James Cox <james-at-imaj.es>
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+* See License.txt
