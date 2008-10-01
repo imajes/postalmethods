@@ -45,29 +45,28 @@ describe "Send Letter With Address" do
   
   it "should instantiate and send a letter with address" do
     @client.prepare!
-    rv = @client.send_letter_and_address(@doc, "Shark Jumping Notes", @addr)
-    rv.sendLetterAndAddressResult.to_i.should > 0
+    rv = @client.send_letter_with_address(@doc, "Shark Jumping Notes", @addr).should > 0
   end
   
   it "should raise the proper exception when trying to send letter without valid attention line" do
     @client.prepare!
     addr = @addr.except(:AttentionLine1)
-    lambda {@client.send_letter_and_address(@doc, "the long goodbye", addr)}.should raise_error(PostalMethods::APIStatusCode4008Exception)
+    lambda {@client.send_letter_with_address(@doc, "the long goodbye", addr)}.should raise_error(PostalMethods::APIStatusCode4008Exception)
   end
   
   it "should refuse to send letter before prepare" do
-    lambda {@client.send_letter_and_address(@doc, "the long goodbye", @addr)}.should raise_error(PostalMethods::NoPreparationException)
+    lambda {@client.send_letter_with_address(@doc, "the long goodbye", @addr)}.should raise_error(PostalMethods::NoPreparationException)
   end  
   
   it "should raise the proper exception when trying to send textfile" do
     @doc = open(File.dirname(__FILE__) + '/../README.txt')
     @client.prepare!
-    lambda {@client.send_letter_and_address(@doc, "the long goodbye", @addr)}.should raise_error(PostalMethods::APIStatusCode3004Exception)
+    lambda {@client.send_letter_with_address(@doc, "the long goodbye", @addr)}.should raise_error(PostalMethods::APIStatusCode3004Exception)
   end
   
   it "should raise the proper exception when trying to send an empty string" do
     @client.prepare!
-    lambda {@client.send_letter_and_address("", "the long goodbye", @addr)}.should raise_error(Errno::ENOENT)
+    lambda {@client.send_letter_with_address("", "the long goodbye", @addr)}.should raise_error(Errno::ENOENT)
   end
   
   

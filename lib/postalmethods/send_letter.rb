@@ -18,7 +18,7 @@ module PostalMethods
       end
     end
     
-    def send_letter_and_address(doc, description, address)
+    def send_letter_with_address(doc, description, address)
       raise PostalMethods::NoPreparationException unless self.prepared 
       raise PostalMethods::AddressNotHashException unless (address.class == Hash)
       
@@ -35,7 +35,7 @@ module PostalMethods
       status_code = rv.sendLetterAndAddressResult.to_i
       
       if status_code > 0
-        return rv
+        return status_code
       elsif API_STATUS_CODES.has_key?(status_code)
         instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
       end
