@@ -156,7 +156,7 @@
       C0 code coverage information
     </h3>
     <p>
-      Generated on Sat Sep 20 19:45:21 +0100 2008 with 
+      Generated on Wed Oct 01 20:56:46 +0100 2008 with 
       <a href='http://eigenclass.org/hiki/rcov'>
         rcov 0.8.1.2
       </a>
@@ -203,7 +203,7 @@
     name="line12"></a>12 status_code = rv.sendLetterResult.to_i </span><span
     class="inferred1"><a name="line13"></a>13 </span><span class="marked0"><a
     name="line14"></a>14 if status_code &gt; 0 </span><span class="marked1"><a
-    name="line15"></a>15 return rv </span><span class="marked0"><a
+    name="line15"></a>15 return status_code </span><span class="marked0"><a
     name="line16"></a>16 elsif API_STATUS_CODES.has_key?(status_code)
     </span><span class="marked1"><a name="line17"></a>17
     instance_eval(&quot;raise APIStatusCode#{status_code.to_s.gsub(/(
@@ -211,7 +211,7 @@
     name="line18"></a>18 end </span><span class="inferred1"><a
     name="line19"></a>19 end </span><span class="inferred0"><a
     name="line20"></a>20 </span><span class="marked1"><a name="line21"></a>21
-    def send_letter_and_address(doc, description, address) </span><span
+    def send_letter_with_address(doc, description, address) </span><span
     class="marked0"><a name="line22"></a>22 raise
     PostalMethods::NoPreparationException unless self.prepared </span><span
     class="marked1"><a name="line23"></a>23 raise
@@ -233,8 +233,8 @@
     rv.sendLetterAndAddressResult.to_i </span><span class="inferred0"><a
     name="line36"></a>36 </span><span class="marked1"><a name="line37"></a>37 if
     status_code &gt; 0 </span><span class="marked0"><a name="line38"></a>38
-    return rv </span><span class="marked1"><a name="line39"></a>39 elsif
-    API_STATUS_CODES.has_key?(status_code) </span><span class="marked0"><a
+    return status_code </span><span class="marked1"><a name="line39"></a>39
+    elsif API_STATUS_CODES.has_key?(status_code) </span><span class="marked0"><a
     name="line40"></a>40 instance_eval(&quot;raise
     APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception&quot;)
     </span><span class="inferred1"><a name="line41"></a>41 end </span><span
