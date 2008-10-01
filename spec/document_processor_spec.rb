@@ -7,17 +7,17 @@ describe "Document Processing" do
   end
   
   it "should open a valid pre-opened document" do
-    @client.document = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+    @client.document = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
     @client.document.class.should == Hash
   end
   
   it "should open a valid document path" do
-    @client.document = File.dirname(__FILE__) + '/../doc/sample.pdf'
+    @client.document = File.dirname(__FILE__) + '/../spec/doc/sample.pdf'
     @client.document.class.should == Hash
   end
   
   it "should create a hash with the right elements" do
-    @client.document = File.dirname(__FILE__) + '/../doc/sample.pdf'
+    @client.document = File.dirname(__FILE__) + '/../spec/doc/sample.pdf'
     @client.document[:extension].should == "pdf"
     @client.document[:bytes].length.should == 213312
     @client.document[:name].should == "sample.pdf"
@@ -25,12 +25,12 @@ describe "Document Processing" do
   end
   
   it "should return true on a valid document path" do
-    @client.document = File.dirname(__FILE__) + '/../doc/sample.pdf'
+    @client.document = File.dirname(__FILE__) + '/../spec/doc/sample.pdf'
     @client.document?.should == true
   end
   
   it "should throw an exception on a false path" do
-    @doc = File.dirname(__FILE__) + '/../doc/does_not_exist.pdf'
+    @doc = File.dirname(__FILE__) + '/../spec/doc/does_not_exist.pdf'
     lambda {@client.document = @doc}.should raise_error(Errno::ENOENT)
   end
   

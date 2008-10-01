@@ -3,14 +3,13 @@ require File.dirname(__FILE__) + '/spec_helper.rb'
 describe "Send Letter" do
   
   before :each do
-    @doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+    @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
     @client = PostalMethods::Client.new(PM_OPTS)
   end
   
   it "should instantiate and send a letter" do
     @client.prepare!
-    rv = @client.send_letter(@doc, "the long goodbye")
-    rv.sendLetterResult.to_i.should > 0    
+    rv = @client.send_letter(@doc, "the long goodbye").should > 0
   end
   
   it "should refuse to send letter before prepare" do
@@ -38,7 +37,7 @@ end
 describe "Send Letter With Address" do
   
   before :each do
-    @doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+    @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
     @addr = {:AttentionLine1 => "The Fonz", :Address1 => "Happy Days", :City => "Baja", :State => "CA", 
              :PostalCode => "90210", :Country => "USA"}
     @client = PostalMethods::Client.new(PM_OPTS)

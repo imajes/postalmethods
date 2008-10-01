@@ -4,7 +4,7 @@ require 'base64'
 describe "Utility Methods" do
   
   before :each do
-    @doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+    @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
     @client = PostalMethods::Client.new(PM_OPTS)
     @client.prepare!
   end
@@ -20,16 +20,13 @@ describe "Utility Methods" do
   end
   
   it "should check for error for when there is no file yet" do
-    res = @client.send_letter(@doc, "the long goodbye")
-    id = res.sendLetterResult.to_i
-    
+    id = @client.send_letter(@doc, "the long goodbye")
     id.should > 0
-     #    
     lambda {@client.get_pdf(id)}.should raise_error(PostalMethods::APIStatusCode3020Exception)
   end
   
   it "should get the details of a letter" do
-    id = @client.send_letter(@doc, "the long goodbye").sendLetterResult.to_i
+    id = @client.send_letter(@doc, "the long goodbye").to_i
     sleep(10) # because it's a tired little clients
     details = @client.get_letter_details(id)
     
@@ -49,7 +46,7 @@ describe "Utility Methods" do
   end
   
   it "should cancel delivery of a letter" do
-    id = @client.send_letter(@doc, "the long goodbye").sendLetterResult.to_i
+    id = @client.send_letter(@doc, "the long goodbye")
     rv = @client.cancel_delivery(id)
     rv.should be_true  
   end

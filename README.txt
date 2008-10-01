@@ -16,7 +16,7 @@ API wrapper library for the postal methods api.
 
 require 'postalmethods'
 
-@doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+@doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
 @client = PostalMethods::Client.new(:user => "user", :password => "password")
 rv = @client.send_letter(@doc, "description of doc")
 puts rv

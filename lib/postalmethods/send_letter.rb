@@ -12,7 +12,7 @@ module PostalMethods
       status_code = rv.sendLetterResult.to_i
       
       if status_code > 0
-        return rv
+        return status_code
       elsif API_STATUS_CODES.has_key?(status_code)
         instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
       end

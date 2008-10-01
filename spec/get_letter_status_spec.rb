@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/spec_helper.rb'
 describe "Get Letter Status" do
   
   before :each do
-    @doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+    @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
     @client = PostalMethods::Client.new(PM_OPTS)
     @client.prepare!
     sleep(10)
@@ -24,11 +24,11 @@ describe "Get Letter Status" do
   it "should send multiple letters and get their status" do
     letters = []
     1.upto(3) do
-      @doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+      @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
       @client = PostalMethods::Client.new(PM_OPTS)
       @client.prepare!      
-      rv = @client.send_letter(@doc, "the long goodbye").sendLetterResult
-      rv.to_i.should > 0
+      rv = @client.send_letter(@doc, "the long goodbye")
+      rv.should > 0
       letters << rv
       #sleep(10) # api needs some time
     end
@@ -37,7 +37,7 @@ describe "Get Letter Status" do
     ret.should be_an_instance_of(Array)
     
     # the return is an array [results, status]
-    recv_letters = ret.collect { |r| r.iD }
+    recv_letters = ret.collect { |r| r.iD.to_i }
   
     recv_letters.should == letters
   end
@@ -49,11 +49,11 @@ describe "Get Letter Status" do
   it "should request a range of letters and get their status" do
     letters = []
     1.upto(3) do
-      @doc = open(File.dirname(__FILE__) + '/../doc/sample.pdf')
+      @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
       @client = PostalMethods::Client.new(PM_OPTS)
       @client.prepare!      
-      rv = @client.send_letter(@doc, "the long goodbye").sendLetterResult
-      rv.to_i.should > 0
+      rv = @client.send_letter(@doc, "the long goodbye")
+      rv.should > 0
       letters << rv
       #sleep(10) # api needs some time
     end
@@ -62,7 +62,7 @@ describe "Get Letter Status" do
     ret.should be_an_instance_of(Array)
     
     # the return is an array [results, status]
-    recv_letters = ret.collect { |r| r.iD }
+    recv_letters = ret.collect { |r| r.iD.to_i }
 
     recv_letters.should == letters
   end
