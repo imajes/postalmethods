@@ -31,7 +31,7 @@ module PostalMethods
         end
         
         ## declare here so we can override in tests, etc.
-        self.api_uri = "http://api.postalmethods.com/PostalWS.asmx?WSDL"
+        self.api_uri = "https://api.postalmethods.com/PostalWS.asmx?WSDL"
                 
         self.username = opts[:username]
         self.password = opts[:password]
