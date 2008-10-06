@@ -4,18 +4,19 @@ $:.unshift(File.dirname(__FILE__)) unless
 module PostalMethods
   
   class Client
-    
+
       require 'rubygems'
       gem 'soap4r'
       require 'soap/rpc/driver'
       require 'soap/wsdlDriver'
-  
+
+      VERBOSE=nil # soap4r is a noisy bugger  
+
       require 'postalmethods/exceptions.rb'
       require 'postalmethods/document_processor.rb'
       require 'postalmethods/send_letter.rb'
       require 'postalmethods/get_letter_status.rb'
       require 'postalmethods/utility.rb'
-
 
       # include modules
       include SendLetter
