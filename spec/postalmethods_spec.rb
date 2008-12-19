@@ -23,4 +23,10 @@ describe "Client" do
     lambda {c.prepare!}.should raise_error(PostalMethods::NoConnectionError)
   end
     
+  it "should be able to set a work mode" do
+    c = PostalMethods::Client.new(PM_OPTS)
+    c.work_mode.should == "default"
+    c.set_work_mode("production")
+    c.work_mode.should == "production"
+  end
 end

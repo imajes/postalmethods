@@ -31,15 +31,14 @@ describe "Send Letter" do
   #  @client.prepare!
   #  lambda {@client.send_letter(@doc, nil)}.should raise_error(PostalMethods::APIStatusCode3004Exception)
   #end
-  
 end
 
 describe "Send Letter With Address" do
   
   before :each do
     @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
-    @addr = {:AttentionLine1 => "The Fonz", :Address1 => "Happy Days", :City => "Baja", :State => "CA", 
-             :PostalCode => "90210", :Country => "USA"}
+    @addr = {:AttentionLine1 => "George Washington", :Address1 => "The White House", :Address2 => "1600 Pennsylvania Ave", 
+      :City => "Washington", :State => "DC", :PostalCode => "20500", :Country => "USA"}
     @client = PostalMethods::Client.new(PM_OPTS)
   end
   
