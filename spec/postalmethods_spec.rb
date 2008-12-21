@@ -25,8 +25,9 @@ describe "Client" do
     
   it "should be able to set a work mode" do
     c = PostalMethods::Client.new(PM_OPTS)
-    c.work_mode.should == "default"
-    c.set_work_mode("production")
-    c.work_mode.should == "production"
+    c.work_mode.should == "Default"
+    c.work_mode = "ProdUCTion"
+    c.work_mode.should == "Production"
+    c.work_mode.should be_a_kind_of(String)
   end
 end

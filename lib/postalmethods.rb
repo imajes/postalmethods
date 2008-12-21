@@ -9,9 +9,10 @@ module PostalMethods
       gem 'soap4r'
       require 'soap/rpc/driver'
       require 'soap/wsdlDriver'
+      require 'ruby-debug'
 
-      VERBOSE=nil # soap4r is a noisy bugger  
-
+      VERBOSE=nil # soap4r is a noisy bugger
+      
       require 'postalmethods/exceptions.rb'
       require 'postalmethods/document_processor.rb'
       require 'postalmethods/send_letter.rb'
@@ -24,12 +25,14 @@ module PostalMethods
       include GetLetterStatus
       include UtilityMethods
     
-      attr_accessor :api_uri, :username, :password, :to_send, :rpc_driver, :prepared, :work_mode
+      attr_accessor :api_uri, :username, :password, :to_send, :rpc_driver, :prepared, :work_mode, :valid_work_modes
   
       def initialize(opts = {})
         if opts[:username].nil? || opts[:password].nil?
           raise PostalMethods::NoCredentialsException
         end
+        
+        self.valid_work_modes = {:default => "Default", :production => "Production", :development => "Development"}
         
         ## declare here so we can override in tests, etc.
         self.api_uri = "https://api.postalmethods.com/PostalWS.asmx?WSDL"
@@ -37,11 +40,7 @@ module PostalMethods
         self.username = opts[:username]
         self.password = opts[:password]
         
-        if opts[:work_mode]
-          set_work_mode(opts[:work_mode])
-        else
-          set_work_mode
-        end
+        self.work_mode = (opts[:work_mode].nil? ? "default" : opts[:work_mode])
       end
 
       def prepare!
@@ -54,11 +53,18 @@ module PostalMethods
         return self
       end
       
-      def set_work_mode(mode = nil)
-        self.work_mode = mode.to_s.downcase
-        unless mode == "production" || mode == "development"
-          self.work_mode = "Default"
+      def work_mode=(in_mode="default")
+        mode = in_mode.to_s.downcase.to_sym
+        
+        if self.valid_work_modes[mode].nil?
+          @work_mode = :default
+        else
+          @work_mode = mode
         end
+      end
+      
+      def work_mode
+        return self.valid_work_modes[@work_mode]
       end
       
   end
