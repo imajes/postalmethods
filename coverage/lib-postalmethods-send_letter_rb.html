@@ -156,7 +156,7 @@
       C0 code coverage information
     </h3>
     <p>
-      Generated on Wed Oct 01 20:56:46 +0100 2008 with 
+      Generated on Sun Dec 21 22:36:24 +0000 2008 with 
       <a href='http://eigenclass.org/hiki/rcov'>
         rcov 0.8.1.2
       </a>
@@ -174,7 +174,7 @@
     <td class='heading'> Total coverage </td> <td class='heading'> Code coverage
     </td> </tr> </thead> <tbody> <tr class='light'> <td> <a
     href='lib-postalmethods-send_letter_rb.html'>
-    lib/postalmethods/send_letter.rb </a> </td> <td class='lines_total'> <tt> 46
+    lib/postalmethods/send_letter.rb </a> </td> <td class='lines_total'> <tt> 49
     </tt> </td> <td class='lines_code'> <tt> 31 </tt> </td> <td> <table
     cellspacing='0' align='right' cellpadding='0'> <tr> <td> <tt
     class='coverage_total'> 100.0% </tt> &nbsp; </td> <td> <table
@@ -189,59 +189,62 @@
     module PostalMethods </span><span class="inferred0"><a name="line2"></a> 2
     </span><span class="marked1"><a name="line3"></a> 3 module SendLetter
     </span><span class="inferred0"><a name="line4"></a> 4 </span><span
-    class="marked1"><a name="line5"></a> 5 def send_letter(doc, description)
-    </span><span class="marked0"><a name="line6"></a> 6 raise
-    PostalMethods::NoPreparationException unless self.prepared </span><span
-    class="inferred1"><a name="line7"></a> 7 ## push a letter over the api
-    </span><span class="marked0"><a name="line8"></a> 8 self.document = doc
-    </span><span class="marked1"><a name="line9"></a> 9 rv =
-    @rpc_driver.sendLetter(:Username =&gt; self.username, :Password =&gt;
+    class="marked1"><a name="line5"></a> 5 def send_letter(doc, description,
+    work_mode = &quot;&quot;) </span><span class="marked0"><a name="line6"></a>
+    6 raise PostalMethods::NoPreparationException unless self.prepared
+    </span><span class="inferred1"><a name="line7"></a> 7 ## push a letter over
+    the api </span><span class="inferred0"><a name="line8"></a> 8 </span><span
+    class="inferred1"><a name="line9"></a> 9 </span><span class="inferred0"><a
+    name="line10"></a>10 </span><span class="marked1"><a name="line11"></a>11
+    self.document = doc </span><span class="marked0"><a name="line12"></a>12 rv
+    = @rpc_driver.sendLetterV2(:Username =&gt; self.username, :Password =&gt;
     self.password, :FileExtension =&gt; self.document[:extension], </span><span
-    class="marked0"><a name="line10"></a>10 :FileBinaryData =&gt;
-    self.document[:bytes], :MyDescription =&gt; description) </span><span
-    class="inferred1"><a name="line11"></a>11 </span><span class="marked0"><a
-    name="line12"></a>12 status_code = rv.sendLetterResult.to_i </span><span
-    class="inferred1"><a name="line13"></a>13 </span><span class="marked0"><a
-    name="line14"></a>14 if status_code &gt; 0 </span><span class="marked1"><a
-    name="line15"></a>15 return status_code </span><span class="marked0"><a
-    name="line16"></a>16 elsif API_STATUS_CODES.has_key?(status_code)
-    </span><span class="marked1"><a name="line17"></a>17
-    instance_eval(&quot;raise APIStatusCode#{status_code.to_s.gsub(/(
-    |\-)/,'')}Exception&quot;) </span><span class="inferred0"><a
-    name="line18"></a>18 end </span><span class="inferred1"><a
-    name="line19"></a>19 end </span><span class="inferred0"><a
-    name="line20"></a>20 </span><span class="marked1"><a name="line21"></a>21
-    def send_letter_with_address(doc, description, address) </span><span
-    class="marked0"><a name="line22"></a>22 raise
-    PostalMethods::NoPreparationException unless self.prepared </span><span
-    class="marked1"><a name="line23"></a>23 raise
-    PostalMethods::AddressNotHashException unless (address.class == Hash)
-    </span><span class="inferred0"><a name="line24"></a>24 </span><span
-    class="inferred1"><a name="line25"></a>25 ## setup the document </span><span
-    class="marked0"><a name="line26"></a>26 self.document = doc </span><span
-    class="inferred1"><a name="line27"></a>27 </span><span class="marked0"><a
-    name="line28"></a>28 opts = {:Username =&gt; self.username, :Password =&gt;
-    self.password, :FileExtension =&gt; self.document[:extension], </span><span
-    class="marked1"><a name="line29"></a>29 :FileBinaryData =&gt;
-    self.document[:bytes], :MyDescription =&gt; description} </span><span
-    class="inferred0"><a name="line30"></a>30 </span><span class="marked1"><a
-    name="line31"></a>31 opts.merge!(address) </span><span class="inferred0"><a
-    name="line32"></a>32 </span><span class="inferred1"><a name="line33"></a>33
-    ## push a letter over the api </span><span class="marked0"><a
-    name="line34"></a>34 rv = @rpc_driver.sendLetterAndAddress(opts)
-    </span><span class="marked1"><a name="line35"></a>35 status_code =
-    rv.sendLetterAndAddressResult.to_i </span><span class="inferred0"><a
-    name="line36"></a>36 </span><span class="marked1"><a name="line37"></a>37 if
-    status_code &gt; 0 </span><span class="marked0"><a name="line38"></a>38
-    return status_code </span><span class="marked1"><a name="line39"></a>39
+    class="marked1"><a name="line13"></a>13 :FileBinaryData =&gt;
+    self.document[:bytes], :MyDescription =&gt; description, :WorkMode =&gt;
+    self.work_mode) </span><span class="inferred0"><a name="line14"></a>14
+    </span><span class="marked1"><a name="line15"></a>15 status_code =
+    rv.sendLetterV2Result.to_i </span><span class="inferred0"><a
+    name="line16"></a>16 </span><span class="marked1"><a name="line17"></a>17 if
+    status_code &gt; 0 </span><span class="marked0"><a name="line18"></a>18
+    return status_code </span><span class="marked1"><a name="line19"></a>19
     elsif API_STATUS_CODES.has_key?(status_code) </span><span class="marked0"><a
-    name="line40"></a>40 instance_eval(&quot;raise
+    name="line20"></a>20 instance_eval(&quot;raise
     APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception&quot;)
-    </span><span class="inferred1"><a name="line41"></a>41 end </span><span
-    class="inferred0"><a name="line42"></a>42 end </span><span
-    class="inferred1"><a name="line43"></a>43 </span><span class="inferred0"><a
-    name="line44"></a>44 end </span><span class="inferred1"><a
-    name="line45"></a>45 </span><span class="inferred0"><a name="line46"></a>46
+    </span><span class="inferred1"><a name="line21"></a>21 end </span><span
+    class="inferred0"><a name="line22"></a>22 end </span><span
+    class="inferred1"><a name="line23"></a>23 </span><span class="marked0"><a
+    name="line24"></a>24 def send_letter_with_address(doc, description, address)
+    </span><span class="marked1"><a name="line25"></a>25 raise
+    PostalMethods::NoPreparationException unless self.prepared </span><span
+    class="marked0"><a name="line26"></a>26 raise
+    PostalMethods::AddressNotHashException unless (address.class == Hash)
+    </span><span class="inferred1"><a name="line27"></a>27 </span><span
+    class="inferred0"><a name="line28"></a>28 ## setup the document </span><span
+    class="marked1"><a name="line29"></a>29 self.document = doc </span><span
+    class="inferred0"><a name="line30"></a>30 </span><span class="marked1"><a
+    name="line31"></a>31 opts = {:Username =&gt; self.username, :Password =&gt;
+    self.password, :FileExtension =&gt; self.document[:extension], </span><span
+    class="marked0"><a name="line32"></a>32 :FileBinaryData =&gt;
+    self.document[:bytes], :MyDescription =&gt; description, :WorkMode =&gt;
+    self.work_mode} </span><span class="inferred1"><a name="line33"></a>33
+    </span><span class="marked0"><a name="line34"></a>34 opts.merge!(address)
+    </span><span class="inferred1"><a name="line35"></a>35 </span><span
+    class="inferred0"><a name="line36"></a>36 ## push a letter over the api
+    </span><span class="marked1"><a name="line37"></a>37 rv =
+    @rpc_driver.sendLetterAndAddressV2(opts) </span><span class="marked0"><a
+    name="line38"></a>38 status_code = rv.sendLetterAndAddressV2Result.to_i
+    </span><span class="inferred1"><a name="line39"></a>39 </span><span
+    class="marked0"><a name="line40"></a>40 if status_code &gt; 0 </span><span
+    class="marked1"><a name="line41"></a>41 return status_code </span><span
+    class="marked0"><a name="line42"></a>42 elsif
+    API_STATUS_CODES.has_key?(status_code) </span><span class="marked1"><a
+    name="line43"></a>43 instance_eval(&quot;raise
+    APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception&quot;)
+    </span><span class="inferred0"><a name="line44"></a>44 end </span><span
+    class="inferred1"><a name="line45"></a>45 end </span><span
+    class="inferred0"><a name="line46"></a>46 </span><span class="inferred1"><a
+    name="line47"></a>47 end </span><span class="inferred0"><a
+    name="line48"></a>48 </span><span class="inferred1"><a name="line49"></a>49
     end </span></pre>
     <hr />
     <p> Generated using the <a href='http://eigenclass.org/hiki.rb?rcov'> rcov
