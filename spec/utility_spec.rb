@@ -38,11 +38,13 @@ describe "Utility Methods" do
     
     details.first.price.should == "0.00"
     details.first.iD.to_i.should == id ## be careful not to confuse with class id
+    details.last.should be_a_kind_of(String)
+    details.last.should == "Development"
   end
   
-  it "should raise an error when trying to get details of an invalid letter" do
+  it "should raise a letter does not exist (3116) error when trying to get details of an invalid letter" do
     sleep(6) # got to wait 6 seconds...
-    lambda { @client.get_letter_details(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
+    lambda { @client.get_letter_details(1)}.should raise_error(PostalMethods::APIStatusCode3116Exception)
   end
   
   it "should cancel delivery of a letter" do
@@ -51,8 +53,8 @@ describe "Utility Methods" do
     rv.should be_true  
   end
   
-  it "should raise an error when trying to cancel an invalid letter" do
-    lambda { @client.cancel_delivery(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
+  it "should raise a letter does not exist (3116) error when trying to cancel an invalid letter" do
+    lambda { @client.cancel_delivery(1)}.should raise_error(PostalMethods::APIStatusCode3116Exception)
   end
   
   

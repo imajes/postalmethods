@@ -8,13 +8,14 @@ module PostalMethods
       raise PostalMethods::NoPreparationException unless self.prepared 
       
       ## get a letter as pdf over the wire
-      rv = @rpc_driver.getLetterDetails(:Username => self.username, :Password => self.password, :ID => id) 
+      rv = @rpc_driver.getLetterDetailsV2(:Username => self.username, :Password => self.password, :ID => id) 
       
-      status_code = rv.getLetterDetailsResult.resultCode.to_i
-      letter_data = rv.getLetterDetailsResult
+      status_code = rv.getLetterDetailsV2Result.resultCode.to_i
+      letter_data = rv.getLetterDetailsV2Result
+        work_mode = rv.getLetterDetailsV2Result.workMode.to_s
             
       if status_code == -3000 # successfully received the req
-        return [letter_data, status_code]
+        return [letter_data, status_code, work_mode]
       elsif API_STATUS_CODES.has_key?(status_code)
         instance_eval("raise APIStatusCode#{status_code.to_s.gsub(/( |\-)/,'')}Exception")
       end
