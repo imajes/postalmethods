@@ -18,8 +18,10 @@ module PostalMethods
       require 'postalmethods/send_letter.rb'
       require 'postalmethods/get_letter_status.rb'
       require 'postalmethods/utility.rb'
+      require 'postalmethods/version.rb'
 
       # include modules
+      include VERSION
       include SendLetter
       include DocumentProcessor
       include GetLetterStatus
