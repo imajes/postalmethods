@@ -17,7 +17,9 @@ describe "Get Letter Status" do
   end
   
   it "should try to get status of a letter i don't have access to" do
-    lambda { @client.get_letter_status(1)}.should raise_error(PostalMethods::APIStatusCode3001Exception)
+    # FIXME: this is a bad test as it doesn't really prove what we're trying to. 
+    # much better to have a different user make a new post etc..
+    lambda { @client.get_letter_status(1020000)}.should raise_error(PostalMethods::APIStatusCode3116Exception)
   end
   
   
@@ -26,7 +28,7 @@ describe "Get Letter Status" do
     1.upto(3) do
       @doc = open(File.dirname(__FILE__) + '/../spec/doc/sample.pdf')
       @client = PostalMethods::Client.new(PM_OPTS)
-      @client.prepare!      
+      @client.prepare!
       rv = @client.send_letter(@doc, "the long goodbye")
       rv.should > 0
       letters << rv

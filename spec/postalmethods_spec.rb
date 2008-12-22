@@ -28,6 +28,6 @@ describe "Client" do
     c.work_mode.should == "Default"
     c.work_mode = "ProdUCTion"
     c.work_mode.should == "Production"
-    c.work_mode.should be_a_kind_ofrak(String)
+    c.work_mode.should be_a_kind_of(String)
   end
 end
