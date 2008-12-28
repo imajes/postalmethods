@@ -2,6 +2,7 @@ $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
 
 module PostalMethods
+  VERSION = '1.1.1'
   
   class Client
 
@@ -18,10 +19,8 @@ module PostalMethods
       require 'postalmethods/send_letter.rb'
       require 'postalmethods/get_letter_status.rb'
       require 'postalmethods/utility.rb'
-      require 'postalmethods/version.rb'
 
       # include modules
-      include VERSION
       include SendLetter
       include DocumentProcessor
       include GetLetterStatus

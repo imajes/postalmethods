@@ -13,11 +13,6 @@ lib/postalmethods/exceptions.rb
 lib/postalmethods/get_letter_status.rb
 lib/postalmethods/send_letter.rb
 lib/postalmethods/utility.rb
-lib/postalmethods/version.rb
-script/console
-script/destroy
-script/generate
-setup.rb
 spec/doc/WSDL-Output
 spec/doc/default.rb
 spec/doc/defaultMappingRegistry.rb
@@ -30,9 +25,4 @@ spec/send_letter_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
 spec/utility_spec.rb
-tasks/deployment.rake
-tasks/environment.rake
 tasks/rspec.rake
-tasks/website.rake
-test/test_helper.rb
-test/test_postalmethods.rb
