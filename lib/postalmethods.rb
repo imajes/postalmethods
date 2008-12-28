@@ -9,7 +9,7 @@ module PostalMethods
       gem 'soap4r'
       require 'soap/rpc/driver'
       require 'soap/wsdlDriver'
-      require 'ruby-debug'
+      #require 'ruby-debug'
 
       VERBOSE=nil # soap4r is a noisy bugger
       
