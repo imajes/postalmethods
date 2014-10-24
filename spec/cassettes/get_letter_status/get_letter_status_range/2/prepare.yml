@@ -1,0 +1,1182 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.postalmethods.com/PostalWS.asmx?WSDL
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - WSDL4R (2.5.2, ruby 1.9.3 (2012-04-20))
+      Accept:
+      - ! '*/*'
+      Date:
+      - Mon, 03 Nov 2014 23:01:54 GMT
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2014 23:01:55 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 2.0.50727
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '88934'
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<wsdl:definitions xmlns:soap=\"http://schemas.xmlsoap.org/wsdl/soap/\"
+        xmlns:tm=\"http://microsoft.com/wsdl/mime/textMatching/\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        xmlns:mime=\"http://schemas.xmlsoap.org/wsdl/mime/\" xmlns:tns=\"PostalMethods\"
+        xmlns:s1=\"PostalMethods/AbstractTypes\" xmlns:s=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:soap12=\"http://schemas.xmlsoap.org/wsdl/soap12/\" xmlns:http=\"http://schemas.xmlsoap.org/wsdl/http/\"
+        targetNamespace=\"PostalMethods\" xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">\r\n
+        \ <wsdl:types>\r\n    <s:schema elementFormDefault=\"qualified\" targetNamespace=\"PostalMethods\">\r\n
+        \     <s:element name=\"SendLetter\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"MyDescription\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FileExtension\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FileBinaryData\" type=\"s:base64Binary\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"SendLetterResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"SendLetterResult\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"SendLetterAndAddress\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"MyDescription\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FileExtension\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FileBinaryData\" type=\"s:base64Binary\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"AttentionLine1\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"AttentionLine2\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AttentionLine3\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Company\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Address1\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address2\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"City\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"State\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"PostalCode\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Country\" type=\"s:string\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"SendLetterAndAddressResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"SendLetterAndAddressResult\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"GetLetterStatus\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"GetLetterStatusResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"GetLetterStatusResult\" type=\"tns:GetLetterStatusResult\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:complexType name=\"GetLetterStatusResult\">\r\n
+        \       <s:sequence>\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ResultCode\" type=\"s:int\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"Status\" type=\"s:int\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"LastUpdateTime\" type=\"s:dateTime\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:element
+        name=\"GetLetterStatus_Multiple\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ID\" type=\"s:string\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"GetLetterStatus_MultipleResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"GetLetterStatus_MultipleResult\" type=\"tns:GetLetterStatus_MultipleResult\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterStatus_MultipleResult\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LetterStatuses\"
+        type=\"tns:ArrayOfLetterStatus\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfLetterStatus\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"LetterStatus\"
+        type=\"tns:LetterStatus\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"LetterStatus\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"Status\" type=\"s:int\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"LastUpdateTime\" type=\"s:dateTime\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:element
+        name=\"GetLetterStatus_Range\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"MinID\" type=\"s:int\" />\r\n            <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"MaxID\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"GetLetterStatus_RangeResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"GetLetterStatus_RangeResult\" type=\"tns:GetLetterStatus_RangeResult\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterStatus_RangeResult\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LetterStatuses\"
+        type=\"tns:ArrayOfLetterStatus\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:element name=\"GetLetterDetails\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Username\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Password\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"GetLetterDetailsResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"GetLetterDetailsResult\" type=\"tns:GetLetterDetailsResult\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterDetailsResult\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Price\"
+        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"NumOfSheets\" type=\"s:int\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"SubmitTime\" type=\"s:dateTime\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"CompletionTime\" type=\"s:dateTime\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Orientation\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Envelope\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Paper\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"PrintColor\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PrintSides\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"NationalMailing\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"InternationalMailing\" type=\"s:string\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"GetPDF\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Username\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Password\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"GetPDFResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"GetPDFResult\" type=\"tns:GetPDFResult\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetPDFResult\">\r\n        <s:sequence>\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"FileData\" type=\"s:base64Binary\"
+        />\r\n        </s:sequence>\r\n      </s:complexType>\r\n      <s:element
+        name=\"CancelDelivery\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"ID\" type=\"s:int\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"CancelDeliveryResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"CancelDeliveryResult\" type=\"s:int\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"SendLetterV2\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"MyDescription\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FileExtension\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"FileBinaryData\" type=\"s:base64Binary\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"WorkMode\"
+        type=\"tns:WorkMode\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:simpleType name=\"WorkMode\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Default\" />\r\n          <s:enumeration
+        value=\"Production\" />\r\n          <s:enumeration value=\"Development\"
+        />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n      <s:element
+        name=\"SendLetterV2Response\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"SendLetterV2Result\"
+        type=\"s:int\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"SendLetterAndAddressV2\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"MyDescription\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"FileExtension\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FileBinaryData\" type=\"s:base64Binary\" />\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"WorkMode\" type=\"tns:WorkMode\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"AttentionLine1\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AttentionLine2\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"AttentionLine3\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Company\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address1\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address2\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"City\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"State\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"PostalCode\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Country\" type=\"s:string\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"SendLetterAndAddressV2Response\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"SendLetterAndAddressV2Result\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"SendPostcardAndAddress\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"MyDescription\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"ImageSideFileType\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"ImageSideBinaryData\" type=\"s:base64Binary\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ImageSideScaling\"
+        type=\"tns:ImageSideScaling\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"AddressSideFileType\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"AddressSideBinaryData\" type=\"s:base64Binary\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"WorkMode\"
+        type=\"tns:WorkMode\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"PrintColor\" type=\"tns:PrintColor\" />\r\n            <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"PostcardSize\" type=\"tns:PostcardSize\" />\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"MailingPriority\" type=\"tns:MailingPriority\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"AttentionLine1\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"AttentionLine2\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"AttentionLine3\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Company\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address1\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Address2\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"City\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"State\" type=\"s:string\" />\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"PostalCode\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Country\" type=\"s:string\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:simpleType name=\"ImageSideScaling\">\r\n        <s:restriction base=\"s:string\">\r\n
+        \         <s:enumeration value=\"Default\" />\r\n          <s:enumeration
+        value=\"FitToPage\" />\r\n          <s:enumeration value=\"None\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:simpleType name=\"PrintColor\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Default\" />\r\n          <s:enumeration
+        value=\"Black\" />\r\n          <s:enumeration value=\"FullColor\" />\r\n
+        \       </s:restriction>\r\n      </s:simpleType>\r\n      <s:simpleType name=\"PostcardSize\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"Default\"
+        />\r\n          <s:enumeration value=\"Postcard_4_25X6\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:simpleType name=\"MailingPriority\">\r\n
+        \       <s:restriction base=\"s:string\">\r\n          <s:enumeration value=\"Default\"
+        />\r\n          <s:enumeration value=\"FirstClass\" />\r\n        </s:restriction>\r\n
+        \     </s:simpleType>\r\n      <s:element name=\"SendPostcardAndAddressResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"SendPostcardAndAddressResult\" type=\"s:int\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"UploadFile\">\r\n        <s:complexType>\r\n          <s:sequence>\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"MyFileName\" type=\"s:string\" />\r\n            <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"FileBinaryData\" type=\"s:base64Binary\" />\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"Permissions\" type=\"tns:Permissions\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Description\"
+        type=\"s:string\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"Overwrite\" type=\"s:boolean\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:simpleType name=\"Permissions\">\r\n        <s:restriction
+        base=\"s:string\">\r\n          <s:enumeration value=\"Account\" />\r\n          <s:enumeration
+        value=\"User\" />\r\n        </s:restriction>\r\n      </s:simpleType>\r\n
+        \     <s:element name=\"UploadFileResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"UploadFileResult\" type=\"s:int\" />\r\n          </s:sequence>\r\n
+        \       </s:complexType>\r\n      </s:element>\r\n      <s:element name=\"GetLetterDetailsV2\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"GetLetterDetailsV2Response\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"GetLetterDetailsV2Result\" type=\"tns:GetLetterDetailsV2Result\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterDetailsV2Result\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Price\"
+        type=\"s:decimal\" />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"NumOfSheets\" type=\"s:int\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"SubmitTime\" type=\"s:dateTime\" />\r\n          <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"CompletionTime\" type=\"s:dateTime\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Orientation\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Envelope\" type=\"s:string\" />\r\n          <s:element minOccurs=\"0\"
+        maxOccurs=\"1\" name=\"Paper\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"PrintColor\" type=\"s:string\" />\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"PrintSides\" type=\"s:string\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"NationalMailing\"
+        type=\"s:string\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"InternationalMailing\" type=\"s:string\" />\r\n          <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"WorkMode\" type=\"s:string\" />\r\n
+        \       </s:sequence>\r\n      </s:complexType>\r\n      <s:element name=\"GetLetterStatusV2\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"GetLetterStatusV2Response\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"GetLetterStatusV2Result\" type=\"tns:GetLetterStatusV2Result\" />\r\n
+        \         </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterStatusV2Result\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Status\"
+        type=\"s:int\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Description\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"LastUpdateTime\" type=\"s:dateTime\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"GetLetterStatusV2_Multiple\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"ID\" type=\"s:string\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:element name=\"GetLetterStatusV2_MultipleResponse\">\r\n        <s:complexType>\r\n
+        \         <s:sequence>\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"GetLetterStatusV2_MultipleResult\" type=\"tns:GetLetterStatusV2_MultipleResult\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterStatusV2_MultipleResult\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LetterStatuses\"
+        type=\"tns:ArrayOfLetterStatusAndDesc\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"ArrayOfLetterStatusAndDesc\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"LetterStatusAndDesc\"
+        type=\"tns:LetterStatusAndDesc\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:complexType name=\"LetterStatusAndDesc\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ID\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"Status\"
+        type=\"s:int\" />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\"
+        name=\"Description\" type=\"s:string\" />\r\n          <s:element minOccurs=\"1\"
+        maxOccurs=\"1\" name=\"LastUpdateTime\" type=\"s:dateTime\" />\r\n        </s:sequence>\r\n
+        \     </s:complexType>\r\n      <s:element name=\"GetLetterStatusV2_Range\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"0\" maxOccurs=\"1\" name=\"Username\" type=\"s:string\" />\r\n
+        \           <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"Password\" type=\"s:string\"
+        />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"MinID\"
+        type=\"s:int\" />\r\n            <s:element minOccurs=\"1\" maxOccurs=\"1\"
+        name=\"MaxID\" type=\"s:int\" />\r\n          </s:sequence>\r\n        </s:complexType>\r\n
+        \     </s:element>\r\n      <s:element name=\"GetLetterStatusV2_RangeResponse\">\r\n
+        \       <s:complexType>\r\n          <s:sequence>\r\n            <s:element
+        minOccurs=\"1\" maxOccurs=\"1\" name=\"GetLetterStatusV2_RangeResult\" type=\"tns:GetLetterStatusV2_RangeResult\"
+        />\r\n          </s:sequence>\r\n        </s:complexType>\r\n      </s:element>\r\n
+        \     <s:complexType name=\"GetLetterStatusV2_RangeResult\">\r\n        <s:sequence>\r\n
+        \         <s:element minOccurs=\"1\" maxOccurs=\"1\" name=\"ResultCode\" type=\"s:int\"
+        />\r\n          <s:element minOccurs=\"0\" maxOccurs=\"1\" name=\"LetterStatuses\"
+        type=\"tns:ArrayOfLetterStatusAndDesc\" />\r\n        </s:sequence>\r\n      </s:complexType>\r\n
+        \     <s:element name=\"int\" type=\"s:int\" />\r\n      <s:element name=\"GetLetterStatusResult\"
+        type=\"tns:GetLetterStatusResult\" />\r\n      <s:element name=\"GetLetterStatus_MultipleResult\"
+        type=\"tns:GetLetterStatus_MultipleResult\" />\r\n      <s:element name=\"GetLetterStatus_RangeResult\"
+        type=\"tns:GetLetterStatus_RangeResult\" />\r\n      <s:element name=\"GetLetterDetailsResult\"
+        type=\"tns:GetLetterDetailsResult\" />\r\n      <s:element name=\"GetPDFResult\"
+        type=\"tns:GetPDFResult\" />\r\n      <s:element name=\"GetLetterDetailsV2Result\"
+        type=\"tns:GetLetterDetailsV2Result\" />\r\n      <s:element name=\"GetLetterStatusV2Result\"
+        type=\"tns:GetLetterStatusV2Result\" />\r\n      <s:element name=\"GetLetterStatusV2_MultipleResult\"
+        type=\"tns:GetLetterStatusV2_MultipleResult\" />\r\n      <s:element name=\"GetLetterStatusV2_RangeResult\"
+        type=\"tns:GetLetterStatusV2_RangeResult\" />\r\n    </s:schema>\r\n    <s:schema
+        targetNamespace=\"PostalMethods/AbstractTypes\">\r\n      <s:import namespace=\"http://schemas.xmlsoap.org/soap/encoding/\"
+        />\r\n      <s:complexType name=\"StringArray\">\r\n        <s:complexContent
+        mixed=\"false\">\r\n          <s:restriction base=\"soapenc:Array\">\r\n            <s:sequence>\r\n
+        \             <s:element minOccurs=\"0\" maxOccurs=\"unbounded\" name=\"String\"
+        type=\"s:string\" />\r\n            </s:sequence>\r\n          </s:restriction>\r\n
+        \       </s:complexContent>\r\n      </s:complexType>\r\n    </s:schema>\r\n
+        \ </wsdl:types>\r\n  <wsdl:message name=\"SendLetterSoapIn\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:SendLetter\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"SendLetterSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:SendLetterResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"SendLetterAndAddressSoapIn\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:SendLetterAndAddress\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"SendLetterAndAddressSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:SendLetterAndAddressResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetLetterStatusSoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatus\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatus_MultipleSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatus_Multiple\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatus_MultipleSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatus_MultipleResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatus_RangeSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatus_Range\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatus_RangeSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatus_RangeResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterDetails\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterDetailsResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetPDFSoapIn\">\r\n    <wsdl:part
+        name=\"parameters\" element=\"tns:GetPDF\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetPDFSoapOut\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:GetPDFResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"CancelDeliverySoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:CancelDelivery\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CancelDeliverySoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:CancelDeliveryResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"SendLetterV2SoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:SendLetterV2\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterV2SoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SendLetterV2Response\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"SendLetterAndAddressV2SoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SendLetterAndAddressV2\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterAndAddressV2SoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SendLetterAndAddressV2Response\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendPostcardAndAddressSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SendPostcardAndAddress\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendPostcardAndAddressSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:SendPostcardAndAddressResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"UploadFileSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:UploadFile\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"UploadFileSoapOut\">\r\n    <wsdl:part name=\"parameters\"
+        element=\"tns:UploadFileResponse\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetLetterDetailsV2SoapIn\">\r\n    <wsdl:part name=\"parameters\" element=\"tns:GetLetterDetailsV2\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsV2SoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterDetailsV2Response\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2SoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusV2\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2SoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusV2Response\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_MultipleSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusV2_Multiple\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_MultipleSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusV2_MultipleResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_RangeSoapIn\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusV2_Range\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_RangeSoapOut\">\r\n
+        \   <wsdl:part name=\"parameters\" element=\"tns:GetLetterStatusV2_RangeResponse\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterHttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"SendLetterHttpGetOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterAndAddressHttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"AttentionLine1\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"AttentionLine2\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"AttentionLine3\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"Company\" type=\"s:string\" />\r\n    <wsdl:part name=\"Address1\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Address2\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"City\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"State\" type=\"s:string\" />\r\n    <wsdl:part name=\"PostalCode\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Country\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterAndAddressHttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatusHttpGetIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatusHttpGetOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:GetLetterStatusResult\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetLetterStatus_MultipleHttpGetIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatus_MultipleHttpGetOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:GetLetterStatus_MultipleResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatus_RangeHttpGetIn\">\r\n    <wsdl:part
+        name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MinID\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"MaxID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatus_RangeHttpGetOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:GetLetterStatus_RangeResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterDetailsHttpGetIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterDetailsHttpGetOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:GetLetterDetailsResult\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetPDFHttpGetIn\">\r\n    <wsdl:part name=\"Username\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Password\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetPDFHttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetPDFResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CancelDeliveryHttpGetIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CancelDeliveryHttpGetOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterV2HttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"WorkMode\"
+        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterV2HttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"SendLetterAndAddressV2HttpGetIn\">\r\n    <wsdl:part
+        name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"WorkMode\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"AttentionLine1\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"AttentionLine2\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"AttentionLine3\" type=\"s:string\" />\r\n    <wsdl:part name=\"Company\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Address1\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Address2\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"City\" type=\"s:string\" />\r\n    <wsdl:part name=\"State\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"PostalCode\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"Country\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"SendLetterAndAddressV2HttpGetOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendPostcardAndAddressHttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ImageSideFileType\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"ImageSideBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part
+        name=\"ImageSideScaling\" type=\"s:string\" />\r\n    <wsdl:part name=\"AddressSideFileType\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"AddressSideBinaryData\" type=\"s1:StringArray\"
+        />\r\n    <wsdl:part name=\"WorkMode\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"PrintColor\" type=\"s:string\" />\r\n    <wsdl:part name=\"PostcardSize\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MailingPriority\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"AttentionLine1\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"AttentionLine2\" type=\"s:string\" />\r\n    <wsdl:part name=\"AttentionLine3\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Company\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Address1\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"Address2\" type=\"s:string\" />\r\n    <wsdl:part name=\"City\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"State\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"PostalCode\" type=\"s:string\" />\r\n    <wsdl:part name=\"Country\"
+        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendPostcardAndAddressHttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"UploadFileHttpGetIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"MyFileName\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"Permissions\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Description\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Overwrite\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"UploadFileHttpGetOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsV2HttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsV2HttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetLetterDetailsV2Result\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2HttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2HttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetLetterStatusV2Result\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_MultipleHttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_MultipleHttpGetOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetLetterStatusV2_MultipleResult\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_RangeHttpGetIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MinID\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"MaxID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatusV2_RangeHttpGetOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:GetLetterStatusV2_RangeResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"SendLetterHttpPostIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part name=\"FileBinaryData\"
+        type=\"s1:StringArray\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"SendLetterAndAddressHttpPostIn\">\r\n    <wsdl:part
+        name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"AttentionLine1\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"AttentionLine2\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"AttentionLine3\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"Company\" type=\"s:string\" />\r\n    <wsdl:part name=\"Address1\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Address2\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"City\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"State\" type=\"s:string\" />\r\n    <wsdl:part name=\"PostalCode\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Country\" type=\"s:string\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterAndAddressHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatusHttpPostIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatusHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:GetLetterStatusResult\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetLetterStatus_MultipleHttpPostIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatus_MultipleHttpPostOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:GetLetterStatus_MultipleResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatus_RangeHttpPostIn\">\r\n    <wsdl:part
+        name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MinID\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"MaxID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatus_RangeHttpPostOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:GetLetterStatus_RangeResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterDetailsHttpPostIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterDetailsHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:GetLetterDetailsResult\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"GetPDFHttpPostIn\">\r\n    <wsdl:part name=\"Username\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Password\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetPDFHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetPDFResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CancelDeliveryHttpPostIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"CancelDeliveryHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterV2HttpPostIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"WorkMode\"
+        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendLetterV2HttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"SendLetterAndAddressV2HttpPostIn\">\r\n    <wsdl:part
+        name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"FileExtension\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"WorkMode\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"AttentionLine1\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"AttentionLine2\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"AttentionLine3\" type=\"s:string\" />\r\n    <wsdl:part name=\"Company\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Address1\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Address2\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"City\" type=\"s:string\" />\r\n    <wsdl:part name=\"State\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"PostalCode\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"Country\" type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message
+        name=\"SendLetterAndAddressV2HttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendPostcardAndAddressHttpPostIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MyDescription\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"ImageSideFileType\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"ImageSideBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part
+        name=\"ImageSideScaling\" type=\"s:string\" />\r\n    <wsdl:part name=\"AddressSideFileType\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"AddressSideBinaryData\" type=\"s1:StringArray\"
+        />\r\n    <wsdl:part name=\"WorkMode\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"PrintColor\" type=\"s:string\" />\r\n    <wsdl:part name=\"PostcardSize\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MailingPriority\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"AttentionLine1\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"AttentionLine2\" type=\"s:string\" />\r\n    <wsdl:part name=\"AttentionLine3\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Company\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Address1\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"Address2\" type=\"s:string\" />\r\n    <wsdl:part name=\"City\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"State\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"PostalCode\" type=\"s:string\" />\r\n    <wsdl:part name=\"Country\"
+        type=\"s:string\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"SendPostcardAndAddressHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:int\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"UploadFileHttpPostIn\">\r\n    <wsdl:part name=\"Username\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Password\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"MyFileName\" type=\"s:string\" />\r\n    <wsdl:part
+        name=\"FileBinaryData\" type=\"s1:StringArray\" />\r\n    <wsdl:part name=\"Permissions\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"Description\" type=\"s:string\"
+        />\r\n    <wsdl:part name=\"Overwrite\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"UploadFileHttpPostOut\">\r\n    <wsdl:part name=\"Body\"
+        element=\"tns:int\" />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsV2HttpPostIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterDetailsV2HttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetLetterDetailsV2Result\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2HttpPostIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2HttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetLetterStatusV2Result\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_MultipleHttpPostIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"ID\" type=\"s:string\" />\r\n
+        \ </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_MultipleHttpPostOut\">\r\n
+        \   <wsdl:part name=\"Body\" element=\"tns:GetLetterStatusV2_MultipleResult\"
+        />\r\n  </wsdl:message>\r\n  <wsdl:message name=\"GetLetterStatusV2_RangeHttpPostIn\">\r\n
+        \   <wsdl:part name=\"Username\" type=\"s:string\" />\r\n    <wsdl:part name=\"Password\"
+        type=\"s:string\" />\r\n    <wsdl:part name=\"MinID\" type=\"s:string\" />\r\n
+        \   <wsdl:part name=\"MaxID\" type=\"s:string\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:message name=\"GetLetterStatusV2_RangeHttpPostOut\">\r\n    <wsdl:part
+        name=\"Body\" element=\"tns:GetLetterStatusV2_RangeResult\" />\r\n  </wsdl:message>\r\n
+        \ <wsdl:portType name=\"PostalWSSimpleSoap\">\r\n    <wsdl:operation name=\"SendLetter\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendLetter() method is the simplest way to send a letter through the PostalMethods
+        service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:SendLetterSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:SendLetterSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddress\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendLetterAndAddress()
+        method is the simplest way to send a letter through the PostalMethods service.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendLetterAndAddressSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:SendLetterAndAddressSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus() method
+        is the simplest way to get a status report of a single letter sent through
+        the PostalMethods service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus_Multiple\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus_Multiple()
+        method is a way to get a status report of multiple letters - in a single Web
+        Service request.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatus_MultipleSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatus_MultipleSoapOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus_Range\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterStatus_Range() method is a way to get a status report of multiple
+        letters - by ID range - in a single Web Service request.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterStatus_RangeSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatus_RangeSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterDetails\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterDetails() method
+        is a way to get a detailed report regarding a letter.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterDetailsSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterDetailsSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetPDF\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetPDF() method is a way to get the PDF file used for printing the letter
+        as a binary file.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetPDFSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetPDFSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"CancelDelivery\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The CancelDelivery() method
+        is a way to cancel fulfillment of a letter still not delivered to the postal
+        service. Cancellation may take up to a few minutes to succeed. If funds were
+        deducted from the account, they will be refunded immediately.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:CancelDeliverySoapIn\" />\r\n      <wsdl:output
+        message=\"tns:CancelDeliverySoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterV2\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendLetter() method is the simplest way to send a letter through the PostalMethods
+        service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:SendLetterV2SoapIn\"
+        />\r\n      <wsdl:output message=\"tns:SendLetterV2SoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddressV2\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendLetterAndAddress()
+        method is the simplest way to send a letter through the PostalMethods service.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendLetterAndAddressV2SoapIn\" />\r\n      <wsdl:output
+        message=\"tns:SendLetterAndAddressV2SoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendPostcardAndAddress\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendPostcardAndAddress()
+        method is the simplest way to send postcards.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:SendPostcardAndAddressSoapIn\" />\r\n      <wsdl:output message=\"tns:SendPostcardAndAddressSoapOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"UploadFile\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        UploadFile() method is used to upload files for later usage.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:UploadFileSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:UploadFileSoapOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetailsV2\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterDetails() method is a way to get a detailed report regarding a letter.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterDetailsV2SoapIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterDetailsV2SoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus() method
+        is the simplest way to get a status report of a single letter sent through
+        the PostalMethods service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusV2SoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusV2SoapOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2_Multiple\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus_Multiple()
+        method is a way to get a status report of multiple letters - in a single Web
+        Service request.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusV2_MultipleSoapIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusV2_MultipleSoapOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatusV2_Range\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterStatus_Range() method is a way to get a status report of multiple
+        letters - by ID range - in a single Web Service request.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterStatusV2_RangeSoapIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatusV2_RangeSoapOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:portType name=\"PostalWSSimpleHttpGet\">\r\n
+        \   <wsdl:operation name=\"SendLetter\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendLetter() method is the simplest way to send a letter through the PostalMethods
+        service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:SendLetterHttpGetIn\"
+        />\r\n      <wsdl:output message=\"tns:SendLetterHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddress\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendLetterAndAddress()
+        method is the simplest way to send a letter through the PostalMethods service.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendLetterAndAddressHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:SendLetterAndAddressHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus() method
+        is the simplest way to get a status report of a single letter sent through
+        the PostalMethods service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusHttpGetIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusHttpGetOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus_Multiple\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterStatus_Multiple() method is a way to get a status report of multiple
+        letters - in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatus_MultipleHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatus_MultipleHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus_Range\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus_Range()
+        method is a way to get a status report of multiple letters - by ID range -
+        in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatus_RangeHttpGetIn\" />\r\n      <wsdl:output message=\"tns:GetLetterStatus_RangeHttpGetOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterDetails\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterDetails() method is a way to get a detailed report regarding a letter.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterDetailsHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterDetailsHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetPDF\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetPDF() method is a way to get the PDF file used for printing the letter
+        as a binary file.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetPDFHttpGetIn\"
+        />\r\n      <wsdl:output message=\"tns:GetPDFHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"CancelDelivery\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The CancelDelivery() method
+        is a way to cancel fulfillment of a letter still not delivered to the postal
+        service. Cancellation may take up to a few minutes to succeed. If funds were
+        deducted from the account, they will be refunded immediately.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:CancelDeliveryHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:CancelDeliveryHttpGetOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterV2\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendLetter() method is the simplest way to send a letter through the PostalMethods
+        service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:SendLetterV2HttpGetIn\"
+        />\r\n      <wsdl:output message=\"tns:SendLetterV2HttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddressV2\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendLetterAndAddress()
+        method is the simplest way to send a letter through the PostalMethods service.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendLetterAndAddressV2HttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:SendLetterAndAddressV2HttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendPostcardAndAddress\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendPostcardAndAddress()
+        method is the simplest way to send postcards.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:SendPostcardAndAddressHttpGetIn\" />\r\n      <wsdl:output message=\"tns:SendPostcardAndAddressHttpGetOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"UploadFile\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        UploadFile() method is used to upload files for later usage.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:UploadFileHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:UploadFileHttpGetOut\" />\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetailsV2\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterDetails() method is a way to get a detailed report regarding a letter.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterDetailsV2HttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterDetailsV2HttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus() method
+        is the simplest way to get a status report of a single letter sent through
+        the PostalMethods service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusV2HttpGetIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusV2HttpGetOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatusV2_Multiple\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterStatus_Multiple() method is a way to get a status report of multiple
+        letters - in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatusV2_MultipleHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatusV2_MultipleHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2_Range\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus_Range()
+        method is a way to get a status report of multiple letters - by ID range -
+        in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatusV2_RangeHttpGetIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatusV2_RangeHttpGetOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:portType name=\"PostalWSSimpleHttpPost\">\r\n
+        \   <wsdl:operation name=\"SendLetter\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendLetter() method is the simplest way to send a letter through the PostalMethods
+        service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:SendLetterHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:SendLetterHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddress\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendLetterAndAddress()
+        method is the simplest way to send a letter through the PostalMethods service.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendLetterAndAddressHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:SendLetterAndAddressHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus() method
+        is the simplest way to get a status report of a single letter sent through
+        the PostalMethods service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusHttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus_Multiple\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterStatus_Multiple() method is a way to get a status report of multiple
+        letters - in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatus_MultipleHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatus_MultipleHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus_Range\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus_Range()
+        method is a way to get a status report of multiple letters - by ID range -
+        in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatus_RangeHttpPostIn\" />\r\n      <wsdl:output message=\"tns:GetLetterStatus_RangeHttpPostOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterDetails\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterDetails() method is a way to get a detailed report regarding a letter.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterDetailsHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterDetailsHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetPDF\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetPDF() method is a way to get the PDF file used for printing the letter
+        as a binary file.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetPDFHttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetPDFHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"CancelDelivery\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The CancelDelivery() method
+        is a way to cancel fulfillment of a letter still not delivered to the postal
+        service. Cancellation may take up to a few minutes to succeed. If funds were
+        deducted from the account, they will be refunded immediately.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:CancelDeliveryHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:CancelDeliveryHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterV2\">\r\n      <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendLetter() method is the simplest way to send a letter through the PostalMethods
+        service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:SendLetterV2HttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:SendLetterV2HttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddressV2\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The SendLetterAndAddress()
+        method is the simplest way to send a letter through the PostalMethods service.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendLetterAndAddressV2HttpPostIn\" />\r\n
+        \     <wsdl:output message=\"tns:SendLetterAndAddressV2HttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"SendPostcardAndAddress\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        SendPostcardAndAddress() method is the simplest way to send postcards.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:SendPostcardAndAddressHttpPostIn\" />\r\n
+        \     <wsdl:output message=\"tns:SendPostcardAndAddressHttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"UploadFile\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The UploadFile() method is
+        used to upload files for later usage.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:UploadFileHttpPostIn\" />\r\n      <wsdl:output message=\"tns:UploadFileHttpPostOut\"
+        />\r\n    </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterDetailsV2\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterDetails() method is a way to get a detailed report regarding a letter.</wsdl:documentation>\r\n
+        \     <wsdl:input message=\"tns:GetLetterDetailsV2HttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterDetailsV2HttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus() method
+        is the simplest way to get a status report of a single letter sent through
+        the PostalMethods service.</wsdl:documentation>\r\n      <wsdl:input message=\"tns:GetLetterStatusV2HttpPostIn\"
+        />\r\n      <wsdl:output message=\"tns:GetLetterStatusV2HttpPostOut\" />\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatusV2_Multiple\">\r\n
+        \     <wsdl:documentation xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The
+        GetLetterStatus_Multiple() method is a way to get a status report of multiple
+        letters - in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatusV2_MultipleHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatusV2_MultipleHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2_Range\">\r\n      <wsdl:documentation
+        xmlns:wsdl=\"http://schemas.xmlsoap.org/wsdl/\">The GetLetterStatus_Range()
+        method is a way to get a status report of multiple letters - by ID range -
+        in a single Web Service request.</wsdl:documentation>\r\n      <wsdl:input
+        message=\"tns:GetLetterStatusV2_RangeHttpPostIn\" />\r\n      <wsdl:output
+        message=\"tns:GetLetterStatusV2_RangeHttpPostOut\" />\r\n    </wsdl:operation>\r\n
+        \ </wsdl:portType>\r\n  <wsdl:binding name=\"PostalWSSimpleSoap\" type=\"tns:PostalWSSimpleSoap\">\r\n
+        \   <soap:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"SendLetter\">\r\n      <soap:operation soapAction=\"PostalMethods/SendLetter\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterAndAddress\">\r\n      <soap:operation soapAction=\"PostalMethods/SendLetterAndAddress\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterStatus\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus_Multiple\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterStatus_Multiple\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus_Range\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterStatus_Range\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetails\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterDetails\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetPDF\">\r\n      <soap:operation soapAction=\"PostalMethods/GetPDF\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CancelDelivery\">\r\n      <soap:operation soapAction=\"PostalMethods/CancelDelivery\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterV2\">\r\n      <soap:operation soapAction=\"PostalMethods/SendLetterV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterAndAddressV2\">\r\n      <soap:operation soapAction=\"PostalMethods/SendLetterAndAddressV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendPostcardAndAddress\">\r\n      <soap:operation soapAction=\"PostalMethods/SendPostcardAndAddress\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"UploadFile\">\r\n      <soap:operation soapAction=\"PostalMethods/UploadFile\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetailsV2\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterDetailsV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterStatusV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2_Multiple\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterStatusV2_Multiple\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2_Range\">\r\n      <soap:operation soapAction=\"PostalMethods/GetLetterStatusV2_Range\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"PostalWSSimpleSoap12\" type=\"tns:PostalWSSimpleSoap\">\r\n
+        \   <soap12:binding transport=\"http://schemas.xmlsoap.org/soap/http\" />\r\n
+        \   <wsdl:operation name=\"SendLetter\">\r\n      <soap12:operation soapAction=\"PostalMethods/SendLetter\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterAndAddress\">\r\n      <soap12:operation soapAction=\"PostalMethods/SendLetterAndAddress\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterStatus\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus_Multiple\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterStatus_Multiple\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus_Range\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterStatus_Range\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetails\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterDetails\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetPDF\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetPDF\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CancelDelivery\">\r\n      <soap12:operation soapAction=\"PostalMethods/CancelDelivery\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterV2\">\r\n      <soap12:operation soapAction=\"PostalMethods/SendLetterV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterAndAddressV2\">\r\n      <soap12:operation soapAction=\"PostalMethods/SendLetterAndAddressV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendPostcardAndAddress\">\r\n      <soap12:operation soapAction=\"PostalMethods/SendPostcardAndAddress\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"UploadFile\">\r\n      <soap12:operation soapAction=\"PostalMethods/UploadFile\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetailsV2\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterDetailsV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterStatusV2\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2_Multiple\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterStatusV2_Multiple\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2_Range\">\r\n      <soap12:operation soapAction=\"PostalMethods/GetLetterStatusV2_Range\"
+        style=\"document\" />\r\n      <wsdl:input>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <soap12:body use=\"literal\"
+        />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"PostalWSSimpleHttpGet\" type=\"tns:PostalWSSimpleHttpGet\">\r\n
+        \   <http:binding verb=\"GET\" />\r\n    <wsdl:operation name=\"SendLetter\">\r\n
+        \     <http:operation location=\"/SendLetter\" />\r\n      <wsdl:input>\r\n
+        \       <http:urlEncoded />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"SendLetterAndAddress\">\r\n      <http:operation
+        location=\"/SendLetterAndAddress\" />\r\n      <wsdl:input>\r\n        <http:urlEncoded
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatus\">\r\n      <http:operation location=\"/GetLetterStatus\"
+        />\r\n      <wsdl:input>\r\n        <http:urlEncoded />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus_Multiple\">\r\n
+        \     <http:operation location=\"/GetLetterStatus_Multiple\" />\r\n      <wsdl:input>\r\n
+        \       <http:urlEncoded />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatus_Range\">\r\n      <http:operation
+        location=\"/GetLetterStatus_Range\" />\r\n      <wsdl:input>\r\n        <http:urlEncoded
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetails\">\r\n      <http:operation location=\"/GetLetterDetails\"
+        />\r\n      <wsdl:input>\r\n        <http:urlEncoded />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetPDF\">\r\n      <http:operation
+        location=\"/GetPDF\" />\r\n      <wsdl:input>\r\n        <http:urlEncoded
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CancelDelivery\">\r\n      <http:operation location=\"/CancelDelivery\"
+        />\r\n      <wsdl:input>\r\n        <http:urlEncoded />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"SendLetterV2\">\r\n      <http:operation
+        location=\"/SendLetterV2\" />\r\n      <wsdl:input>\r\n        <http:urlEncoded
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterAndAddressV2\">\r\n      <http:operation location=\"/SendLetterAndAddressV2\"
+        />\r\n      <wsdl:input>\r\n        <http:urlEncoded />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"SendPostcardAndAddress\">\r\n
+        \     <http:operation location=\"/SendPostcardAndAddress\" />\r\n      <wsdl:input>\r\n
+        \       <http:urlEncoded />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"UploadFile\">\r\n      <http:operation location=\"/UploadFile\"
+        />\r\n      <wsdl:input>\r\n        <http:urlEncoded />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterDetailsV2\">\r\n
+        \     <http:operation location=\"/GetLetterDetailsV2\" />\r\n      <wsdl:input>\r\n
+        \       <http:urlEncoded />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2\">\r\n      <http:operation location=\"/GetLetterStatusV2\"
+        />\r\n      <wsdl:input>\r\n        <http:urlEncoded />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatusV2_Multiple\">\r\n
+        \     <http:operation location=\"/GetLetterStatusV2_Multiple\" />\r\n      <wsdl:input>\r\n
+        \       <http:urlEncoded />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n
+        \       <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n
+        \   <wsdl:operation name=\"GetLetterStatusV2_Range\">\r\n      <http:operation
+        location=\"/GetLetterStatusV2_Range\" />\r\n      <wsdl:input>\r\n        <http:urlEncoded
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:binding name=\"PostalWSSimpleHttpPost\" type=\"tns:PostalWSSimpleHttpPost\">\r\n
+        \   <http:binding verb=\"POST\" />\r\n    <wsdl:operation name=\"SendLetter\">\r\n
+        \     <http:operation location=\"/SendLetter\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"SendLetterAndAddress\">\r\n
+        \     <http:operation location=\"/SendLetterAndAddress\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus\">\r\n
+        \     <http:operation location=\"/GetLetterStatus\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus_Multiple\">\r\n
+        \     <http:operation location=\"/GetLetterStatus_Multiple\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterStatus_Range\">\r\n
+        \     <http:operation location=\"/GetLetterStatus_Range\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetLetterDetails\">\r\n
+        \     <http:operation location=\"/GetLetterDetails\" />\r\n      <wsdl:input>\r\n
+        \       <mime:content type=\"application/x-www-form-urlencoded\" />\r\n      </wsdl:input>\r\n
+        \     <wsdl:output>\r\n        <mime:mimeXml part=\"Body\" />\r\n      </wsdl:output>\r\n
+        \   </wsdl:operation>\r\n    <wsdl:operation name=\"GetPDF\">\r\n      <http:operation
+        location=\"/GetPDF\" />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"CancelDelivery\">\r\n      <http:operation location=\"/CancelDelivery\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterV2\">\r\n      <http:operation location=\"/SendLetterV2\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendLetterAndAddressV2\">\r\n      <http:operation location=\"/SendLetterAndAddressV2\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"SendPostcardAndAddress\">\r\n      <http:operation location=\"/SendPostcardAndAddress\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"UploadFile\">\r\n      <http:operation location=\"/UploadFile\" />\r\n
+        \     <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterDetailsV2\">\r\n      <http:operation location=\"/GetLetterDetailsV2\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2\">\r\n      <http:operation location=\"/GetLetterStatusV2\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2_Multiple\">\r\n      <http:operation location=\"/GetLetterStatusV2_Multiple\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n    <wsdl:operation
+        name=\"GetLetterStatusV2_Range\">\r\n      <http:operation location=\"/GetLetterStatusV2_Range\"
+        />\r\n      <wsdl:input>\r\n        <mime:content type=\"application/x-www-form-urlencoded\"
+        />\r\n      </wsdl:input>\r\n      <wsdl:output>\r\n        <mime:mimeXml
+        part=\"Body\" />\r\n      </wsdl:output>\r\n    </wsdl:operation>\r\n  </wsdl:binding>\r\n
+        \ <wsdl:service name=\"PostalWSSimple\">\r\n    <wsdl:port name=\"PostalWSSimpleSoap\"
+        binding=\"tns:PostalWSSimpleSoap\">\r\n      <soap:address location=\"https://api.postalmethods.com/PostalWS.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"PostalWSSimpleSoap12\" binding=\"tns:PostalWSSimpleSoap12\">\r\n
+        \     <soap12:address location=\"https://api.postalmethods.com/PostalWS.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"PostalWSSimpleHttpGet\" binding=\"tns:PostalWSSimpleHttpGet\">\r\n
+        \     <http:address location=\"https://api.postalmethods.com/PostalWS.asmx\"
+        />\r\n    </wsdl:port>\r\n    <wsdl:port name=\"PostalWSSimpleHttpPost\" binding=\"tns:PostalWSSimpleHttpPost\">\r\n
+        \     <http:address location=\"https://api.postalmethods.com/PostalWS.asmx\"
+        />\r\n    </wsdl:port>\r\n  </wsdl:service>\r\n</wsdl:definitions>"
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 23:01:55 GMT
+recorded_with: VCR 2.9.3

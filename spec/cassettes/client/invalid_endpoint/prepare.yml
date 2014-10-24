@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://invaliduri.tld/api_endpoint.wtf
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - WSDL4R (2.5.2, ruby 1.9.3 (2012-04-20))
+      Accept:
+      - ! '*/*'
+      Date:
+      - Mon, 03 Nov 2014 19:13:41 GMT
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "U2VydmVy":
+      - !binary |-
+        bmdpbng=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        TW9uLCAwMyBOb3YgMjAxNCAxOToxMzo0MSBHTVQ=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC9odG1s
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5n
+      !binary "RXhwaXJlcw==":
+      - !binary |-
+        TW9uLCAwMyBOb3YgMjAxNCAxOToxMzo0MCBHTVQ=
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        bm8tY2FjaGU=
+    body:
+      encoding: US-ASCII
+      string: <html><head><meta http-equiv="refresh" content="0;url=http://search.mediacomcable.com/search/?q=http://invaliduri.tld/api_endpoint.wtf&t=0"/></head><body><script>window.location="http://search.mediacomcable.com/search/?q="+escape(window.location)+"&r="+escape(document.referrer)+"&t=0";</script></body></html>
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 19:13:41 GMT
+recorded_with: VCR 2.9.3

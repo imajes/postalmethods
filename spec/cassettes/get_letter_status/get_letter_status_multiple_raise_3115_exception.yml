@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.postalmethods.com/PostalWS.asmx
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n
+        \   xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n
+        \ <env:Body>\n    <n1:GetLetterStatusV2_Multiple xmlns:n1=\"PostalMethods\">\n
+        \     <n1:Username>chipcastle</n1:Username>\n      <n1:Password>Hedu0910</n1:Password>\n
+        \     <n1:ID>1,2,3</n1:ID>\n    </n1:GetLetterStatusV2_Multiple>\n  </env:Body>\n</env:Envelope>"
+    headers:
+      Content-Type:
+      - text/xml; charset=utf-8
+      Soapaction:
+      - ! '"PostalMethods/GetLetterStatusV2_Multiple"'
+      User-Agent:
+      - SOAP4R/1.6.1-SNAPSHOT
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2014 22:36:37 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 2.0.50727
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '440'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetLetterStatusV2_MultipleResponse
+        xmlns="PostalMethods"><GetLetterStatusV2_MultipleResult><ResultCode>-3115</ResultCode></GetLetterStatusV2_MultipleResult></GetLetterStatusV2_MultipleResponse></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 22:36:37 GMT
+recorded_with: VCR 2.9.3

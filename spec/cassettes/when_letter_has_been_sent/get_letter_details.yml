@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.postalmethods.com/PostalWS.asmx
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n
+        \   xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n
+        \ <env:Body>\n    <n1:GetLetterDetailsV2 xmlns:n1=\"PostalMethods\">\n      <n1:Username>chipcastle</n1:Username>\n
+        \     <n1:Password>Hedu0910</n1:Password>\n      <n1:ID>3294506</n1:ID>\n
+        \   </n1:GetLetterDetailsV2>\n  </env:Body>\n</env:Envelope>"
+    headers:
+      Content-Type:
+      - text/xml; charset=utf-8
+      Soapaction:
+      - ! '"PostalMethods/GetLetterDetailsV2"'
+      User-Agent:
+      - SOAP4R/1.6.1-SNAPSHOT
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2014 22:36:26 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 2.0.50727
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '887'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><GetLetterDetailsV2Response
+        xmlns="PostalMethods"><GetLetterDetailsV2Result><ResultCode>-3000</ResultCode><ID>3294506</ID><Price>0.00</Price><NumOfSheets>0</NumOfSheets><SubmitTime>2014-11-03T16:36:24</SubmitTime><CompletionTime>0001-01-01T00:00:00</CompletionTime><Orientation>Portrait</Orientation><Envelope>Env#10WhiteDoubleWindow</Envelope><Paper>Letter24#BondWhite</Paper><PrintColor>Black</PrintColor><PrintSides>PrintSimplex</PrintSides><NationalMailing>USFirstClass</NationalMailing><InternationalMailing>USInterFirstClass</InternationalMailing><WorkMode>Development</WorkMode></GetLetterDetailsV2Result></GetLetterDetailsV2Response></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 22:36:26 GMT
+recorded_with: VCR 2.9.3
