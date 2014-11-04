@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.postalmethods.com/PostalWS.asmx
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<env:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n
+        \   xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n    xmlns:env=\"http://schemas.xmlsoap.org/soap/envelope/\">\n
+        \ <env:Body>\n    <n1:SendLetterAndAddressV2 xmlns:n1=\"PostalMethods\">\n
+        \     <n1:Username>chipcastle</n1:Username>\n      <n1:Password>Hedu0910</n1:Password>\n
+        \     <n1:MyDescription>the long goodbye</n1:MyDescription>\n      <n1:FileExtension>txt</n1:FileExtension>\n
+        \     <n1:FileBinaryData>PSBwb3N0YWxtZXRob2RzCgoqIEluZm86IGh0dHA6Ly93d3cucG9zdGFsbWV0\naG9kcy5jb20vcmVzb3VyY2VzL3F1aWNrc3RhcnQKKiBDb2RlOiBodHRwOi8v\nZ2l0aHViLmNvbS9pbWFqZXMvcG9zdGFsbWV0aG9kcy90cmVlL21hc3RlcgoK\nPT0gREVTQ1JJUFRJT046CgpBUEkgd3JhcHBlciBsaWJyYXJ5IGZvciB0aGUg\ncG9zdGFsIG1ldGhvZHMgYXBpLgoKPT0gRkVBVFVSRVMvUFJPQkxFTVM6Cgoq\nIFByb3ZpZGVzIGFjY2VzcyB0byBhbGwgb2YgdGhlIEFQSSBtZXRob2RzIHdp\ndGggYXBwcm9wcmlhdGUgCiAgZXhjZXB0aW9ucyBhcyBuZWNlc3NhcnkuCgo9\nPSBTWU5PUFNJUzoKCnJlcXVpcmUgJ3Bvc3RhbG1ldGhvZHMnCgpAZG9jID0g\nb3BlbihGaWxlLmRpcm5hbWUoX19GSUxFX18pICsgJy8uLi9zcGVjL2RvYy9z\nYW1wbGUucGRmJykKQGNsaWVudCA9IFBvc3RhbE1ldGhvZHM6OkNsaWVudC5u\nZXcoOnVzZXIgPT4gInVzZXIiLCA6cGFzc3dvcmQgPT4gInBhc3N3b3JkIikK\ncnYgPSBAY2xpZW50LnNlbmRfbGV0dGVyKEBkb2MsICJkZXNjcmlwdGlvbiBv\nZiBkb2MiKQpwdXRzIHJ2Cgo9PSBSRVFVSVJFTUVOVFM6CgoqIFRoaXMgZ2Vt\nIHJlbGllcyBvbiB0aGUgc29hcDRyIGdlbS4KCj09IElOU1RBTEw6CgoqIHN1\nZG8gZ2VtIGluc3RhbGwgcG9zdGFsbWV0aG9kcwoqIGdldCBhIGRldmVsb3Bl\nciBhY2NvdW50IGF0IHBvc3RhbG1ldGhvZHMuY29tCgo9PSBMSUNFTlNFOgoK\nKiBTZWUgTGljZW5zZS50eHQ=</n1:FileBinaryData>\n
+        \     <n1:WorkMode>Default</n1:WorkMode>\n      <n1:AttentionLine1>George
+        Washington</n1:AttentionLine1>\n      <n1:Address1>The White House</n1:Address1>\n
+        \     <n1:Address2>1600 Pennsylvania Ave</n1:Address2>\n      <n1:City>Washington</n1:City>\n
+        \     <n1:State>DC</n1:State>\n      <n1:PostalCode>20500</n1:PostalCode>\n
+        \     <n1:Country>USA</n1:Country>\n    </n1:SendLetterAndAddressV2>\n  </env:Body>\n</env:Envelope>"
+    headers:
+      Content-Type:
+      - text/xml; charset=utf-8
+      Soapaction:
+      - ! '"PostalMethods/SendLetterAndAddressV2"'
+      User-Agent:
+      - SOAP4R/1.6.1-SNAPSHOT
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2014 22:36:44 GMT
+      Server:
+      - Microsoft-IIS/6.0
+      X-Powered-By:
+      - ASP.NET
+      X-Aspnet-Version:
+      - 2.0.50727
+      Cache-Control:
+      - private, max-age=0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '399'
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><SendLetterAndAddressV2Response
+        xmlns="PostalMethods"><SendLetterAndAddressV2Result>-3004</SendLetterAndAddressV2Result></SendLetterAndAddressV2Response></soap:Body></soap:Envelope>
+    http_version: 
+  recorded_at: Mon, 03 Nov 2014 22:36:44 GMT
+recorded_with: VCR 2.9.3
